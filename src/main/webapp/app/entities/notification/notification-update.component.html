@@ -1,0 +1,109 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-notification-heading" jhiTranslate="userManagementFeApp.notification.home.createOrEditLabel">Create or edit a Notification</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="userManagementFeApp.notification.sender" for="field_sender">Sender</label>
+                    <input type="text" class="form-control" name="sender" id="field_sender"
+                           formControlName="sender"/>
+                    <div *ngIf="editForm.get('sender')!.invalid && (editForm.get('sender')!.dirty || editForm.get('sender')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('sender')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="userManagementFeApp.notification.receiver" for="field_receiver">Receiver</label>
+                    <input type="text" class="form-control" name="receiver" id="field_receiver"
+                           formControlName="receiver"/>
+                    <div *ngIf="editForm.get('receiver')!.invalid && (editForm.get('receiver')!.dirty || editForm.get('receiver')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('receiver')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="userManagementFeApp.notification.title" for="field_title">Title</label>
+                    <input type="text" class="form-control" name="title" id="field_title"
+                           formControlName="title"/>
+                    <div *ngIf="editForm.get('title')!.invalid && (editForm.get('title')!.dirty || editForm.get('title')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('title')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="userManagementFeApp.notification.details" for="field_details">Details</label>
+                    <input type="text" class="form-control" name="details" id="field_details"
+                           formControlName="details"/>
+                    <div *ngIf="editForm.get('details')!.invalid && (editForm.get('details')!.dirty || editForm.get('details')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('details')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="userManagementFeApp.notification.type" for="field_type">Type</label>
+                    <input type="text" class="form-control" name="type" id="field_type"
+                           formControlName="type"/>
+                    <div *ngIf="editForm.get('type')!.invalid && (editForm.get('type')!.dirty || editForm.get('type')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('type')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="userManagementFeApp.notification.status" for="field_status">Status</label>
+                    <select class="form-control" name="status" formControlName="status" id="field_status">
+                        <option value="UNREAD">{{ 'userManagementFeApp.ViewStatus.UNREAD' | translate }}</option>
+                        <option value="READ">{{ 'userManagementFeApp.ViewStatus.READ' | translate }}</option>
+                        <option value="DELETE">{{ 'userManagementFeApp.ViewStatus.DELETE' | translate }}</option>
+                        <option value="ARCHIVE">{{ 'userManagementFeApp.ViewStatus.ARCHIVE' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="userManagementFeApp.notification.modifiedOn" for="field_modifiedOn">Modified On</label>
+                    <div class="d-flex">
+                        <input id="field_modifiedOn" type="datetime-local" class="form-control" name="modifiedOn" formControlName="modifiedOn" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="userManagementFeApp.notification.modifiedBy" for="field_modifiedBy">Modified By</label>
+                    <input type="text" class="form-control" name="modifiedBy" id="field_modifiedBy"
+                           formControlName="modifiedBy"/>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

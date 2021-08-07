@@ -1,0 +1,75 @@
+<div class="inner-page register-wrp">
+    <div class=" justify-content-center">
+        <div *ngIf="notification">
+            <div class="page-header">
+            <h2><span jhiTranslate="userManagementFeApp.notification.detail.title">Notification</span> {{ notification.id }}</h2>
+                </div>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <div class="common-flx">
+                <dt><span jhiTranslate="userManagementFeApp.notification.sender">Sender</span></dt>
+                <dd>
+                    <span>{{ notification.sender }}</span>
+                </dd>
+            </div>
+                <div class="common-flx">
+                <dt><span jhiTranslate="userManagementFeApp.notification.receiver">Receiver</span></dt>
+                <dd>
+                    <span>{{ notification.receiver }}</span>
+                </dd>
+            </div>
+                <div class="common-flx">
+                <dt><span jhiTranslate="userManagementFeApp.notification.title">Title</span></dt>
+                <dd>
+                    <span>{{ notification.title }}</span>
+                </dd>
+            </div>
+                <div class="common-flx">
+                <dt><span jhiTranslate="userManagementFeApp.notification.details">Details</span></dt>
+                <dd>
+                    <span>{{ notification.details }}</span>
+                </dd>
+            </div>
+                <div class="common-flx">
+                <dt><span jhiTranslate="userManagementFeApp.notification.type">Type</span></dt>
+                <dd>
+                    <span>{{ notification.type }}</span>
+                </dd>
+            </div>
+                <div class="common-flx">
+                <dt><span jhiTranslate="userManagementFeApp.notification.status">Status</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'userManagementFeApp.ViewStatus.' + notification.status }}">{{ notification.status }}</span>
+                </dd>
+            </div>
+                <div class="common-flx">
+                <dt><span jhiTranslate="userManagementFeApp.notification.modifiedOn">Modified On</span></dt>
+                <dd>
+                    <span>{{ notification.modifiedOn }}</span>
+                </dd>
+            </div>
+                <div class="common-flx">
+                <dt><span jhiTranslate="userManagementFeApp.notification.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{ notification.modifiedBy }}</span>
+                </dd>
+            </div>
+            </dl>
+            <div class="action-bottom">
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn cur-p btn-secondary">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/notification', notification.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+            </div>
+        </div>
+    </div>
+</div>

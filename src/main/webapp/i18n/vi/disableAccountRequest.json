@@ -1,0 +1,27 @@
+{
+  "userManagementFeApp": {
+    "disableAccountRequest": {
+      "home": {
+        "title": "Disable Account Requests",
+        "createLabel": "Thêm mới một Disable Account Request",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Disable Account Request",
+        "notFound": "No Disable Account Requests found"
+      },
+      "created": "Một Disable Account Request mới được tạo với định danh {{ param }}",
+      "updated": "Một Disable Account Request cập nhật với định danh {{ param }}",
+      "deleted": "Một Disable Account Request đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Disable Account Request {{ id }}?"
+      },
+      "detail": {
+        "title": "Disable Account Request"
+      },
+      "userId": "User Id",
+      "reason": "Reason",
+      "status": "Status",
+      "createdDate": "Created Date",
+      "updatedDate": "Updated Date",
+      "updatedBy": "Updated By"
+    }
+  }
+}

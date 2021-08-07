@@ -1,0 +1,60 @@
+
+entity UserAddress {
+    userId String required
+	address String required
+	city String required
+	state String required
+	country Country required
+	zipcode String required
+    addressType AddressType
+}
+entity UserContacts {
+	userId String required
+	name String required
+	relation Relation required
+    phoneNumber String required
+    email String
+    address String required
+    city String required
+    state String required
+    country String required
+    zipCode String required
+}
+
+enum Country {
+	USA(USA)
+    CANADA(Canada)
+    UK(UnitedKingdom)
+    GERMANY(Germany)
+    JAPAN(Japan)
+    AUSTRALIA(Australia)
+    NEWZEALAND(NewZealand)
+    RUSSIA(Russia)
+    FRANCE(France)
+    ITALY(Italy)
+    INDIA(India)
+    PAKISTAN(Pakistan)
+    AFGHANISTAN(Afghanistan)
+    SRILANKA(SriLanka)    
+}
+
+enum Relation {
+	FATHER(Father)
+    MOTHER(Mother)
+    SPOUSE(Spouse)
+    BROTHER(Brother)
+    SISTER(Sister)
+    COUSIN(Cousin)
+    SON(Son)
+    DAUGHTER(Daughter)
+    UNCLE(Uncle)
+    AUNT(Aunt)
+    NIECE(Niece)
+    NEPHEW(Nephew)
+}
+enum AddressType {
+	HEADOFFICE(Head Office)
+    RIGIONALOFFICE(Regional Office)
+    BRANCHOFFICE(Branch Office)
+    SUBDIVISION(Subdivision)
+}

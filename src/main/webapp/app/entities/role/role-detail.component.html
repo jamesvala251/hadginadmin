@@ -1,0 +1,53 @@
+<div class="inner-page register-wrp">
+    <div class=" justify-content-center">
+        <div *ngIf="role">
+            <div class="page-header">
+            <h2><span jhiTranslate="userManagementFeApp.role.detail.title">Role</span> <!--{{ role.id }}--></h2>
+            </div>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <div class="common-flx">
+                <dt><span jhiTranslate="userManagementFeApp.role.roleName">Role Name</span></dt>
+                <dd>
+                    <span>{{ role.roleName }}</span>
+                </dd>
+                </div>
+                <div class="common-flx">
+                <dt><span jhiTranslate="userManagementFeApp.role.description">Description</span></dt>
+                <dd>
+                    <span>{{ role.description }}</span>
+                </dd>
+                </div>
+                <div class="common-flx">
+                <dt><span jhiTranslate="userManagementFeApp.role.status">Status</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'userManagementFeApp.StatusEnum.' + role.status }}">{{ role.status }}</span>
+                </dd>
+                </div>
+                <div class="common-flx">
+                <dt><span jhiTranslate="userManagementFeApp.role.permissions">Permissions</span></dt>
+                <dd>
+                    <span class="badge bgc-deep-purple-50 c-deep-purple-700 p-10 lh-0 tt-c badge-pill mb-2 mr-2" *ngFor="let permissions of role.permissions; let last = last">
+                        <a [routerLink]="['/permission', permissions?.id, 'view']">{{ permissions.permissionName }}</a>
+                    </span>
+                </dd>
+                </div>
+            </dl>
+            <div class="action-bottom">
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn cur-p btn-secondary">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/role', role.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+            </div>
+        </div>
+    </div>
+</div>

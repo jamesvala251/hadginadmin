@@ -1,0 +1,29 @@
+{
+  "userManagementFeApp": {
+    "notification": {
+      "home": {
+        "title": "Notifications",
+        "createLabel": "Δημιουργήστε ένα νέο Notification",
+        "createOrEditLabel": "Δημιουργήστε η επεξεργαστείτε ένα Notification",
+        "notFound": "No Notifications found"
+      },
+      "created": "Ένα νέο Notification έχει δημιουργηθεί με αναγνωριστικό {{ param }}",
+      "updated": "Ένα Notification έχει ενημερωθεί με αναγνωριστικό {{ param }}",
+      "deleted": "Ένα Notification έχει διαγραφτεί με αναγνωριστικό {{ param }}",
+      "delete": {
+        "question": "Είστε βέβαιοι όταν θέλετε να διαγράψετε το ακόλουθο Notification {{ id }};"
+      },
+      "detail": {
+        "title": "Notification"
+      },
+      "sender": "Sender",
+      "receiver": "Receiver",
+      "title": "Title",
+      "details": "Details",
+      "type": "Type",
+      "status": "Status",
+      "modifiedOn": "Modified On",
+      "modifiedBy": "Modified By"
+    }
+  }
+}

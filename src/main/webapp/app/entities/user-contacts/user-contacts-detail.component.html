@@ -1,0 +1,90 @@
+<div class="inner-page register-wrp">
+<div class=" justify-content-center">
+
+        <div *ngIf="userContacts">
+            <h2><span jhiTranslate="userManagementFeApp.userContacts.detail.title">User Contacts</span> </h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <div class="common-flx">
+                <dt><span jhiTranslate="userManagementFeApp.userContacts.userId">User Id</span></dt>
+                <dd>
+                    <span>{{ userContacts.userId }}</span>
+                </dd>
+            </div>
+                <div class="common-flx">
+                <dt><span jhiTranslate="userManagementFeApp.userContacts.name">Name</span></dt>
+                <dd>
+                    <span>{{ userContacts.name }}</span>
+                </dd>
+            </div>
+                <div class="common-flx">
+                <dt><span jhiTranslate="userManagementFeApp.userContacts.relation">Relation</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'userManagementFeApp.Relation.' + userContacts.relation }}">{{ userContacts.relation }}</span>
+                </dd>
+            </div>
+                <div class="common-flx">
+                <dt><span jhiTranslate="userManagementFeApp.userContacts.phoneNumber">Phone Number</span></dt>
+                <dd>
+                    <span>{{ userContacts.phoneNumber }}</span>
+                </dd>
+            </div>
+                <div class="common-flx">
+                <dt><span jhiTranslate="userManagementFeApp.userContacts.email">Email</span></dt>
+                <dd>
+                    <span>{{ userContacts.email }}</span>
+                </dd>
+            </div>
+                <div class="common-flx">
+                <dt><span jhiTranslate="userManagementFeApp.userContacts.address">Address</span></dt>
+                <dd>
+                    <span>{{ userContacts.address }}</span>
+                </dd>
+            </div>
+                <div class="common-flx">
+                <dt><span jhiTranslate="userManagementFeApp.userContacts.city">City</span></dt>
+                <dd>
+                    <span>{{ userContacts.city }}</span>
+                </dd>
+            </div>
+                <div class="common-flx">
+                <dt><span jhiTranslate="userManagementFeApp.userContacts.state">State</span></dt>
+                <dd>
+                    <div *ngIf="userContacts.state">
+                        <span>{{ userContacts.state?.name }}</span>
+                    </div>
+                </dd>
+            </div>
+                <div class="common-flx">
+                <dt><span jhiTranslate="userManagementFeApp.userContacts.country">Country</span></dt>
+                <dd>
+                    <div *ngIf="userContacts.country">
+                        <span>{{ userContacts.country?.name }}</span>
+                    </div>
+                </dd>
+            </div>
+                <div class="common-flx">
+                <dt><span jhiTranslate="userManagementFeApp.userContacts.zipCode">Zip Code</span></dt>
+                <dd>
+                    <span>{{ userContacts.zipCode }}</span>
+                </dd>
+            </div>
+            </dl>
+            <div class="action-bottom">
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn cur-p btn-secondary">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/user-contacts', userContacts.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+            </div>
+        </div>
+    </div>
+</div>

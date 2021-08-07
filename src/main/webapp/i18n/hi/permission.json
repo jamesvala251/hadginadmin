@@ -1,0 +1,26 @@
+{
+  "userManagementFeApp": {
+    "permission": {
+      "home": {
+        "title": "Permissions",
+        "createLabel": "नया Permission बनाएँ",
+        "createOrEditLabel": "Permission बनाएँ या संपादित करें",
+        "notFound": "No Permissions found"
+      },
+      "created": "एक नया Permission [identifier: {{ param }}] तैयार है",
+      "updated": "एक Permission [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Permission [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Permission [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Permission"
+      },
+      "permissionName": "Permission Name",
+      "category": "Category",
+      "description": "Description",
+      "status": "Status",
+      "roles": "Roles"
+    }
+  }
+}

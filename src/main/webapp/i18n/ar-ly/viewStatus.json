@@ -1,0 +1,11 @@
+{
+  "userManagementFeApp": {
+    "ViewStatus": {
+      "null": "",
+      "UNREAD": "Unread",
+      "READ": "Read",
+      "DELETE": "Delete",
+      "ARCHIVE": "Archive"
+    }
+  }
+}

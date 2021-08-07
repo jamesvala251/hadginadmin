@@ -1,0 +1,27 @@
+{
+  "userManagementFeApp": {
+    "communicationChannel": {
+      "home": {
+        "title": "CommunicationChannels",
+        "createLabel": "Communication Channel を追加",
+        "createOrEditLabel": "Communication Channelを追加または編集",
+        "notFound": "No Communication Channels found"
+      },
+      "created": "A new Communication Channel is created with identifier {{ param }}",
+      "updated": "A Communication Channel is updated with identifier {{ param }}",
+      "deleted": "A Communication Channel is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Communication Channel {{ id }}を削除してもよろしいですか？"
+      },
+      "detail": {
+        "title": "Communication Channel"
+      },
+      "channelName": "Channel Name",
+      "description": "Description",
+      "status": "Status",
+      "modifiedOn": "Modified On",
+      "modifiedBy": "Modified By",
+      "messageQueueTopic": "Message Queue Topic"
+    }
+  }
+}

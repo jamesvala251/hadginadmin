@@ -1,0 +1,27 @@
+{
+  "userManagementFeApp": {
+    "communicationChannel": {
+      "home": {
+        "title": "Communication Channels",
+        "createLabel": "Δημιουργήστε ένα νέο Communication Channel",
+        "createOrEditLabel": "Δημιουργήστε η επεξεργαστείτε ένα Communication Channel",
+        "notFound": "No Communication Channels found"
+      },
+      "created": "Ένα νέο Communication Channel έχει δημιουργηθεί με αναγνωριστικό {{ param }}",
+      "updated": "Ένα Communication Channel έχει ενημερωθεί με αναγνωριστικό {{ param }}",
+      "deleted": "Ένα Communication Channel έχει διαγραφτεί με αναγνωριστικό {{ param }}",
+      "delete": {
+        "question": "Είστε βέβαιοι όταν θέλετε να διαγράψετε το ακόλουθο Communication Channel {{ id }};"
+      },
+      "detail": {
+        "title": "Communication Channel"
+      },
+      "channelName": "Channel Name",
+      "description": "Description",
+      "status": "Status",
+      "modifiedOn": "Modified On",
+      "modifiedBy": "Modified By",
+      "messageQueueTopic": "Message Queue Topic"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "userManagementFeApp": {
+    "communicationChannel": {
+      "home": {
+        "title": "Communication Channels",
+        "createLabel": "สร้าง Communication Channel",
+        "createOrEditLabel": "สร้างหรือแก้ไข Communication Channel",
+        "notFound": "No Communication Channels found"
+      },
+      "created": "Communication Channel ถูกสร้างด้วย {{ param }}",
+      "updated": "Communication Channel ถูกแก้ไขด้วย {{ param }}",
+      "deleted": "Communication Channel ถูกลบด้วย {{ param }}",
+      "delete": {
+        "question": "คุณต้องการที่จะลบ Communication Channel {{ id }}?"
+      },
+      "detail": {
+        "title": "Communication Channel"
+      },
+      "channelName": "Channel Name",
+      "description": "Description",
+      "status": "Status",
+      "modifiedOn": "Modified On",
+      "modifiedBy": "Modified By",
+      "messageQueueTopic": "Message Queue Topic"
+    }
+  }
+}

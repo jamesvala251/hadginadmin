@@ -1,0 +1,64 @@
+<div class="inner-page register-wrp">
+    <div class=" justify-content-center">
+        <div *ngIf="disableAccountRequest">
+            <div class="page-header">
+            <h2><span jhiTranslate="">Disable Account</span> {{ disableAccountRequest.id }}</h2>
+                </div>
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <div class="common-flx">
+                <dt><span jhiTranslate="userManagementFeApp.disableAccountRequest.userId">User Id</span></dt>
+                <dd>
+                    <span>{{ disableAccountRequest.userId }}</span>
+                </dd>
+            </div>
+                <div class="common-flx">
+                <dt><span jhiTranslate="userManagementFeApp.disableAccountRequest.reason">Reason</span></dt>
+                <dd>
+                    <span>{{ disableAccountRequest.reason }}</span>
+                </dd>
+            </div>
+                <div class="common-flx">
+                <dt><span jhiTranslate="userManagementFeApp.disableAccountRequest.status">Status</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'userManagementFeApp.AccountRequestStatus.' + disableAccountRequest.status }}">{{ disableAccountRequest.status }}</span>
+                </dd>
+            </div>
+                <div class="common-flx">
+                <dt><span jhiTranslate="userManagementFeApp.disableAccountRequest.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{ disableAccountRequest.createdDate }}</span>
+                </dd>
+            </div>
+                <div class="common-flx">
+                <dt><span jhiTranslate="userManagementFeApp.disableAccountRequest.updatedDate">Updated Date</span></dt>
+                <dd>
+                    <span>{{ disableAccountRequest.updatedDate }}</span>
+                </dd>
+            </div>
+                <div class="common-flx">
+                <dt><span jhiTranslate="userManagementFeApp.disableAccountRequest.updatedBy">Updated By</span></dt>
+                <dd>
+                    <span>{{ disableAccountRequest.updatedBy }}</span>
+                </dd>
+            </div>
+            </dl>
+            <div class="action-bottom">
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn cur-p btn-secondary">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/disable-account-request', disableAccountRequest.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+            </div>
+        </div>
+    </div>
+</div>

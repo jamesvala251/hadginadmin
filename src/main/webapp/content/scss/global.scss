@@ -1,0 +1,429 @@
+@import 'bootstrap-variables';
+@import '~bootstrap/scss/functions';
+@import '~bootswatch/dist/litera/variables';
+@import '~bootstrap/scss/variables';
+@import 'icons/font-awesome.css';
+@import 'icons/themify-icons.css';
+
+/* ==============================================================
+Bootstrap tweaks
+===============================================================*/
+
+body,
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 300;
+}
+
+a:hover {
+  /* make sure browsers use the pointer cursor for anchors, even with no href */
+  cursor: pointer;
+}
+.checkbox-info input[type='checkbox']:checked + label::before {
+  outline: 0 none;
+}
+.dropdown-item:hover {
+  color: $dropdown-link-hover-color;
+}
+
+/* ==========================================================================
+Browser Upgrade Prompt
+========================================================================== */
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+.btn-primary {
+  border-radius: 20px;
+  background-image: linear-gradient(to right top, #8290ee, #4c5aba, #4150bc, #4350ac, #384498);
+  border: 0;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  min-width: 120px;
+}
+.table-responsive {
+  padding: 5px;
+  margin-top: 10px;
+}
+table,
+.table {
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: inherit;
+}
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.54);
+  font-weight: 500;
+}
+.table td {
+  font-size: 14px;
+}
+h2 {
+  font-size: 24px;
+  font-weight: 500;
+}
+/* ==========================================================================
+Generic styles
+========================================================================== */
+
+/* other generic styles */
+.page-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.action-bottom .btn:first-child {
+  margin-right: 10px;
+}
+.btn {
+  border-radius: 20px;
+}
+.header.navbar {
+  padding: 0 1rem !important;
+}
+.action-bottom {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+.three-dots {
+  transform: rotate(90deg);
+  display: block;
+}
+.dots-dropdown .dropdown {
+  display: flex;
+}
+.dots-dropdown .dropdown-item {
+  font-size: 14px;
+  color: #5d5d5d;
+  padding: 0.25rem 1rem;
+  border-bottom: 1px solid #e9e9e9;
+}
+.dots-dropdown .dropdown-item:last-child {
+  border: 0;
+}
+.permission-wrp {
+  position: relative;
+  margin: 15px 0;
+}
+
+.permission-wrp > label {
+  position: absolute;
+  top: 15px;
+  font-weight: bold;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  // white-space: nowrap;
+  left: 10px;
+  max-width: 80px;
+}
+.lbl-wrp {
+  position: absolute;
+  font-weight: bold;
+}
+.view-wrp {
+  margin-left: 120px;
+}
+.permission-wrp:nth-child(4n + 1) .form-check {
+  margin-left: 120px;
+}
+.permission-wrp:nth-child(4n + 1),
+.permission-wrp:nth-child(1),
+.ex-wro {
+  flex: 0 0 34% !important;
+  width: 260px !important;
+  max-width: 260px !important;
+}
+.wrp-wrp .col-md-3 {
+  flex: 0 0 22%;
+  max-width: 22%;
+}
+.top-filter {
+  position: relative;
+  margin-bottom: -48px;
+}
+.show-total {
+  position: absolute;
+  right: -108px;
+  top: 6px;
+  max-width: 186px;
+  line-height: 1.2;
+}
+.jh-card {
+  padding: 1.5%;
+  margin-top: 20px;
+  border: none;
+}
+
+.error {
+  color: white;
+  background-color: red;
+}
+
+.pad {
+  padding: 10px;
+}
+
+.w-40 {
+  width: 40% !important;
+}
+
+.w-60 {
+  width: 60% !important;
+}
+
+.break {
+  white-space: normal;
+  word-break: break-all;
+}
+
+.readonly {
+  background-color: #eee;
+  opacity: 1;
+}
+
+.footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.hand,
+[jhisortby] {
+  cursor: pointer;
+}
+
+/* ==========================================================================
+Custom alerts for notification
+========================================================================== */
+.alerts {
+  .alert {
+    text-overflow: ellipsis;
+    pre {
+      background: none;
+      border: none;
+      font: inherit;
+      color: inherit;
+      padding: 0;
+      margin: 0;
+    }
+    .popover pre {
+      font-size: 10px;
+    }
+  }
+  .jhi-toast {
+    position: fixed;
+    width: 100%;
+    &.left {
+      left: 5px;
+    }
+    &.right {
+      right: 5px;
+    }
+    &.top {
+      top: 55px;
+    }
+    &.bottom {
+      bottom: 55px;
+    }
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .alerts .jhi-toast {
+    width: 50%;
+  }
+}
+
+/* ==========================================================================
+entity detail page css
+========================================================================== */
+.row.jh-entity-details > {
+  dd {
+    margin-bottom: 15px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .row.jh-entity-details > {
+    dt {
+      margin-bottom: 15px;
+    }
+    dd {
+      border-bottom: 1px solid #eee;
+      padding-left: 180px;
+      margin-left: 0;
+    }
+  }
+}
+
+/* ==========================================================================
+ui bootstrap tweaks
+========================================================================== */
+.nav,
+.pagination,
+.carousel,
+.panel-title a {
+  cursor: pointer;
+}
+
+.thread-dump-modal-lock {
+  max-width: 450px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* jhipster-needle-scss-add-main JHipster will add new css style */
+.inner-page.register-wrp {
+  max-width: 600px;
+  margin: 10px auto 50px auto;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(222, 222, 222, 1);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(222, 222, 222, 1);
+  box-shadow: 0px 0px 5px 0px rgba(222, 222, 222, 1);
+  padding: 30px;
+  border-radius: 6px;
+  background: #fff;
+  position: relative;
+}
+
+.heading-title {
+  text-align: center;
+}
+.common-flx {
+  display: flex;
+  margin-bottom: 15px;
+}
+.common-flx span {
+  min-width: 200px;
+  display: block;
+}
+.common-flx span.badge {
+  min-width: auto;
+  max-width: inherit;
+  display: inline-block;
+}
+.user-profile-pic-update [type='file'] {
+  height: 0;
+  overflow: hidden;
+  width: 0;
+}
+.user-profile-pic-update [type='file'] + label {
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  outline: none;
+  padding: 9px 30px;
+  position: relative;
+  vertical-align: middle;
+  color: #fff;
+  min-width: 130px;
+  border-radius: 160px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.25px;
+  margin: 0;
+  line-height: 20px;
+}
+.user-profile-pic-update [type='file'] + label.btn-2 {
+  background-color: #99c793;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.user-profile-pic-update [type='file'] + label.btn-2:hover {
+  background-color: #497f42;
+}
+.user-profile-pic-update [type='file'] + label.btn-2:hover::before {
+  right: 75%;
+}
+.user-profile-pic-update {
+  text-align: center;
+}
+.profile-pic img {
+  width: 100px;
+  border-radius: 100%;
+  height: 100px;
+  object-fit: cover;
+  border: 2px solid #9a9a9a;
+  margin-bottom: 15px;
+}
+
+.modal-header {
+  padding: 2rem 2rem 1rem 2rem;
+  justify-content: center;
+  border-bottom: 0;
+}
+.modal-body {
+  padding: 2rem;
+}
+.modal-title {
+  font-size: 28px;
+  font-weight: 600;
+}
+.modal {
+  text-align: center;
+  padding: 0 !important;
+}
+.modal-header {
+  justify-content: center;
+}
+.modal-header .close {
+  position: absolute;
+  right: 15px;
+  top: 5px;
+  border: 0;
+  outline: 0;
+}
+.modal-header .close:focus {
+  border: 0;
+  outline: 0;
+}
+.modal::before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px;
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+.modal-footer {
+  justify-content: center;
+}
+h2 {
+  font-size: 24px;
+  font-weight: 500;
+  position: relative;
+  display: inline;
+  padding-bottom: 6px;
+  margin-bottom: 10px;
+}
+h2:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50%;
+  height: 2px;
+  background: #a5a5a5;
+}
+.dots-dropdown .dropdown-item svg {
+  color: #919191;
+  font-size: 13px;
+  margin-right: 6px;
+  width: 20px;
+}

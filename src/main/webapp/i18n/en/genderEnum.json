@@ -1,0 +1,10 @@
+{
+  "userManagement": {
+    "GenderEnum": {
+      "null": "",
+      "undefined": "",
+      "MALE": "Male",
+      "FEMALE": "Female"
+    }
+  }
+}

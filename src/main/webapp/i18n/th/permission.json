@@ -1,0 +1,26 @@
+{
+  "userManagementFeApp": {
+    "permission": {
+      "home": {
+        "title": "Permissions",
+        "createLabel": "สร้าง Permission",
+        "createOrEditLabel": "สร้างหรือแก้ไข Permission",
+        "notFound": "No Permissions found"
+      },
+      "created": "Permission ถูกสร้างด้วย {{ param }}",
+      "updated": "Permission ถูกแก้ไขด้วย {{ param }}",
+      "deleted": "Permission ถูกลบด้วย {{ param }}",
+      "delete": {
+        "question": "คุณต้องการที่จะลบ Permission {{ id }}?"
+      },
+      "detail": {
+        "title": "Permission"
+      },
+      "permissionName": "Permission Name",
+      "category": "Category",
+      "description": "Description",
+      "status": "Status",
+      "roles": "Roles"
+    }
+  }
+}

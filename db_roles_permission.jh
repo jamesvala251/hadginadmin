@@ -1,0 +1,27 @@
+
+entity Role {
+	roleName String
+    description String
+    status StatusEnum
+}
+entity UserGroup {
+	groupName String
+    description String
+    status StatusEnum
+}
+entity Permission {
+	permissionName String
+    category String
+    description String
+    status StatusEnum
+}
+enum StatusEnum {
+	ACTIVE(Active)
+    INACTIVE(Inactive)
+}
+relationship ManyToMany {
+  Role{permissions} to Permission{roles}
+  UserGroup{roles} to Role{userGroups}
+}
+
+

@@ -1,0 +1,27 @@
+{
+  "userManagementFeApp": {
+    "messageQueueTopic": {
+      "home": {
+        "title": "Message Queue Topics",
+        "createLabel": "Thêm mới một Message Queue Topic",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Message Queue Topic",
+        "notFound": "No Message Queue Topics found"
+      },
+      "created": "Một Message Queue Topic mới được tạo với định danh {{ param }}",
+      "updated": "Một Message Queue Topic cập nhật với định danh {{ param }}",
+      "deleted": "Một Message Queue Topic đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Message Queue Topic {{ id }}?"
+      },
+      "detail": {
+        "title": "Message Queue Topic"
+      },
+      "topicName": "Topic Name",
+      "description": "Description",
+      "status": "Status",
+      "modifiedOn": "Modified On",
+      "modifiedBy": "Modified By",
+      "communicationChannel": "Communication Channel"
+    }
+  }
+}

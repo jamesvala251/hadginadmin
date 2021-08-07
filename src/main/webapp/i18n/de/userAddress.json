@@ -1,0 +1,28 @@
+{
+  "userManagementFeApp": {
+    "userAddress": {
+      "home": {
+        "title": "User Addresses",
+        "createLabel": "User Address erstellen",
+        "createOrEditLabel": "User Address erstellen oder bearbeiten",
+        "notFound": "No User Addresses found"
+      },
+      "created": "User Address erstellt mit ID {{ param }}",
+      "updated": "User Address aktualisiert mit ID {{ param }}",
+      "deleted": "User Address gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll User Address {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "User Address"
+      },
+      "userId": "User Id",
+      "address": "Address",
+      "city": "City",
+      "state": "State",
+      "country": "Country",
+      "zipcode": "Zipcode",
+      "addressType": "Address Type"
+    }
+  }
+}

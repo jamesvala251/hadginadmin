@@ -1,0 +1,84 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="userManagementFeApp.role.home.title">Roles</span>
+
+        <button *jhiHasAnyAuthority="['create_role']" id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-role" [routerLink]="['/role/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="userManagementFeApp.role.home.createLabel">
+            Create a new Role
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="roles?.length === 0">
+        <span jhiTranslate="userManagementFeApp.role.home.notFound">No roles found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="roles && roles.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <!--<th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>-->
+                    <th scope="col" ><span jhiTranslate="userManagementFeApp.role.roleName">Role Name</span></th>
+                    <th scope="col" ><span jhiTranslate="userManagementFeApp.role.description">Description</span></th>
+                    <th scope="col" ><span jhiTranslate="userManagementFeApp.role.status">Status</span></th>
+                    <th scope="col" ><span jhiTranslate="userManagementFeApp.role.permissions">Permissions</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let role of roles ;trackBy: trackId">
+                    <!--<td><a [routerLink]="['/role', role.id, 'view']">{{ role.id }}</a></td>-->
+                    <td>{{ role.roleName }}</td>
+                    <td>{{ role.description }}</td>
+                    <td jhiTranslate="{{ 'userManagementFeApp.StatusEnum.' + role.status }}">{{ role.status }}</td>
+                    <td>
+                        <span *ngFor="let permissions of role.permissions; let last = last">
+                            <a class="badge bgc-deep-purple-50 c-deep-purple-700 p-10 lh-0 tt-c badge-pill m-1" [routerLink]="['/permission', permissions?.id, 'view']">{{ permissions.permissionName }}</a>
+                        </span>
+                    </td>
+                 
+                    <td class="text-right dots-dropdown">
+                        <div class="dropdown">
+                            <a class="three-dots"  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class=""> <i class="ti-more-alt"></i></span>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            
+                                <a 
+                                *jhiHasAnyAuthority="['view_role']"
+                                    [routerLink]="['/role', role.id, 'view']"
+                                class="dropdown-item">
+                            <fa-icon icon="eye"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </a>
+                         
+                            
+                                <a class="dropdown-item"
+                                *jhiHasAnyAuthority="['update_role']"
+                                [routerLink]="['/role', role.id, 'edit']"
+                                >
+                            <fa-icon icon="pencil-alt"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                                </a>
+                             
+                             
+                                <button   *jhiHasAnyAuthority="['delete_role']" (click)="delete(role)"
+                                class="dropdown-item" >
+                            <fa-icon icon="times"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                       
+                            </button>
+                            </div>
+                          </div>
+                      
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

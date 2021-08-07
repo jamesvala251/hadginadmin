@@ -1,0 +1,26 @@
+{
+  "userManagementFeApp": {
+    "permission": {
+      "home": {
+        "title": "Permissions",
+        "createLabel": "Создать новый Permission",
+        "createOrEditLabel": "Создать или отредактировать Permission",
+        "notFound": "No Permissions found"
+      },
+      "created": "Новый Permission создан с идентификатором {{ param }}",
+      "updated": "Permission обновлен с идентификатором {{ param }}",
+      "deleted": "Permission удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Permission {{ id }}?"
+      },
+      "detail": {
+        "title": "Permission"
+      },
+      "permissionName": "Permission Name",
+      "category": "Category",
+      "description": "Description",
+      "status": "Status",
+      "roles": "Roles"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "userManagementFeApp": {
+    "state": {
+      "home": {
+        "title": "States",
+        "createLabel": "Δημιουργήστε ένα νέο State",
+        "createOrEditLabel": "Δημιουργήστε η επεξεργαστείτε ένα State",
+        "notFound": "No States found"
+      },
+      "created": "Ένα νέο State έχει δημιουργηθεί με αναγνωριστικό {{ param }}",
+      "updated": "Ένα State έχει ενημερωθεί με αναγνωριστικό {{ param }}",
+      "deleted": "Ένα State έχει διαγραφτεί με αναγνωριστικό {{ param }}",
+      "delete": {
+        "question": "Είστε βέβαιοι όταν θέλετε να διαγράψετε το ακόλουθο State {{ id }};"
+      },
+      "detail": {
+        "title": "State"
+      },
+      "code": "Code",
+      "name": "Name",
+      "country": "Country"
+    }
+  }
+}

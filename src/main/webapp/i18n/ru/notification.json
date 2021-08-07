@@ -1,0 +1,29 @@
+{
+  "userManagementFeApp": {
+    "notification": {
+      "home": {
+        "title": "Notifications",
+        "createLabel": "Создать новый Notification",
+        "createOrEditLabel": "Создать или отредактировать Notification",
+        "notFound": "No Notifications found"
+      },
+      "created": "Новый Notification создан с идентификатором {{ param }}",
+      "updated": "Notification обновлен с идентификатором {{ param }}",
+      "deleted": "Notification удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Notification {{ id }}?"
+      },
+      "detail": {
+        "title": "Notification"
+      },
+      "sender": "Sender",
+      "receiver": "Receiver",
+      "title": "Title",
+      "details": "Details",
+      "type": "Type",
+      "status": "Status",
+      "modifiedOn": "Modified On",
+      "modifiedBy": "Modified By"
+    }
+  }
+}

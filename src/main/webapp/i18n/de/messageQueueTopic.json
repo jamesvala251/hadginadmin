@@ -1,0 +1,27 @@
+{
+  "userManagementFeApp": {
+    "messageQueueTopic": {
+      "home": {
+        "title": "Message Queue Topics",
+        "createLabel": "Message Queue Topic erstellen",
+        "createOrEditLabel": "Message Queue Topic erstellen oder bearbeiten",
+        "notFound": "No Message Queue Topics found"
+      },
+      "created": "Message Queue Topic erstellt mit ID {{ param }}",
+      "updated": "Message Queue Topic aktualisiert mit ID {{ param }}",
+      "deleted": "Message Queue Topic gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Message Queue Topic {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Message Queue Topic"
+      },
+      "topicName": "Topic Name",
+      "description": "Description",
+      "status": "Status",
+      "modifiedOn": "Modified On",
+      "modifiedBy": "Modified By",
+      "communicationChannel": "Communication Channel"
+    }
+  }
+}

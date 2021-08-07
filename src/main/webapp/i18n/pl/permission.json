@@ -1,0 +1,26 @@
+{
+  "userManagementFeApp": {
+    "permission": {
+      "home": {
+        "title": "Permission",
+        "createLabel": "Dodaj Permission",
+        "createOrEditLabel": "Dodaj lub edytuj: Permission",
+        "notFound": "No Permissions found"
+      },
+      "created": "Utworzono nowy obiekt typu Permission z identyfikatorem {{ param }}",
+      "updated": "Uaktualniono obiekt typu Permission z identyfikatorem {{ param }}",
+      "deleted": "Usunięto obiekt typu Permission z identyfikatorem {{ param }}",
+      "delete": {
+        "question": "Czy na pewno chcesz usunąć Permission {{ id }}?"
+      },
+      "detail": {
+        "title": "Permission"
+      },
+      "permissionName": "Permission Name",
+      "category": "Category",
+      "description": "Description",
+      "status": "Status",
+      "roles": "Roles"
+    }
+  }
+}

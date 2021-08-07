@@ -1,0 +1,31 @@
+{
+  "userManagementFeApp": {
+    "userContacts": {
+      "home": {
+        "title": "User Contacts",
+        "createLabel": "建立一筆新的 User Contacts",
+        "createOrEditLabel": "建立或編輯 User Contacts",
+        "notFound": "No User Contacts found"
+      },
+      "created": "新的 User Contacts 建立成功，識別碼為 {{ param }}",
+      "updated": "識別碼為 {{ param }} 的 User Contacts 更新成功",
+      "deleted": "識別碼為 {{ param }} 的 User Contacts 刪除成功",
+      "delete": {
+        "question": "您確定要刪除 User Contacts {{ id }} 嗎?"
+      },
+      "detail": {
+        "title": "User Contacts"
+      },
+      "userId": "User Id",
+      "name": "Name",
+      "relation": "Relation",
+      "phoneNumber": "Phone Number",
+      "email": "Email",
+      "address": "Address",
+      "city": "City",
+      "state": "State",
+      "country": "Country",
+      "zipCode": "Zip Code"
+    }
+  }
+}

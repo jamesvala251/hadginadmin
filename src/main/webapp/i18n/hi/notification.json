@@ -1,0 +1,29 @@
+{
+  "userManagementFeApp": {
+    "notification": {
+      "home": {
+        "title": "Notifications",
+        "createLabel": "नया Notification बनाएँ",
+        "createOrEditLabel": "Notification बनाएँ या संपादित करें",
+        "notFound": "No Notifications found"
+      },
+      "created": "एक नया Notification [identifier: {{ param }}] तैयार है",
+      "updated": "एक Notification [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Notification [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Notification [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Notification"
+      },
+      "sender": "Sender",
+      "receiver": "Receiver",
+      "title": "Title",
+      "details": "Details",
+      "type": "Type",
+      "status": "Status",
+      "modifiedOn": "Modified On",
+      "modifiedBy": "Modified By"
+    }
+  }
+}

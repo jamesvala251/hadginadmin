@@ -1,0 +1,14 @@
+entity DisableAccountRequest {
+    userId String required
+    reason String required
+    status AccountRequestStatus
+    createdDate Instant
+    updatedDate Instant
+    updatedBy String
+}
+enum AccountRequestStatus {
+    REQUESTED(Requested)
+    COMPLETED(Completed)
+    ONHOLD(Onhold)
+    REJECTED(Rejected)
+}

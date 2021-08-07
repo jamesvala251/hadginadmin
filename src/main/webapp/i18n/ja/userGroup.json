@@ -1,0 +1,25 @@
+{
+  "userManagementFeApp": {
+    "userGroup": {
+      "home": {
+        "title": "UserGroups",
+        "createLabel": "User Group を追加",
+        "createOrEditLabel": "User Groupを追加または編集",
+        "notFound": "No User Groups found"
+      },
+      "created": "A new User Group is created with identifier {{ param }}",
+      "updated": "A User Group is updated with identifier {{ param }}",
+      "deleted": "A User Group is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "User Group {{ id }}を削除してもよろしいですか？"
+      },
+      "detail": {
+        "title": "User Group"
+      },
+      "groupName": "Group Name",
+      "description": "Description",
+      "status": "Status",
+      "roles": "Roles"
+    }
+  }
+}

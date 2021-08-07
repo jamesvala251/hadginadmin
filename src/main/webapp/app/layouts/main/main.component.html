@@ -1,0 +1,17 @@
+<jhi-page-ribbon></jhi-page-ribbon>
+
+<div *ngIf="isHeader">
+    <router-outlet name="sidebar"></router-outlet>
+    
+</div>
+
+<div [ngClass]="isSidebar ? 'page-container' : ''">
+    <div *ngIf="isSidebar">
+    <router-outlet name="navbar"></router-outlet>
+    </div>
+    <main [ngClass]="isHeader ? 'main-content' : ''">
+        <jhi-bread-crumb *ngIf="isAuthenticated()"></jhi-bread-crumb>
+        <router-outlet></router-outlet>
+</main>
+    <!-- <jhi-footer></jhi-footer> -->
+</div>

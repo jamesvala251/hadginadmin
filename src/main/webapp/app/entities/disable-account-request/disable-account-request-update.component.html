@@ -1,0 +1,57 @@
+<div class="inner-page register-wrp">
+    <div class=" justify-content-center">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <div class="page-header"> 
+            <h2 id="jhi-disable-account-request-heading" jhiTranslate="">Create or edit a Disable Account</h2>
+            </div>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <!--<label for="id" jhiTranslate="global.field.id">ID</label>-->
+                    <input hidden type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="userManagementFeApp.disableAccountRequest.reason" for="field_reason">Reason</label>
+                    <input type="text" class="form-control" name="reason" id="field_reason"
+                           formControlName="reason"/>
+                    <div *ngIf="editForm.get('reason')!.invalid && (editForm.get('reason')!.dirty || editForm.get('reason')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('reason')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div *jhiHasAnyAuthority="'ROLE_ADMIN'" class="form-group">
+                    <label class="form-control-label" jhiTranslate="userManagementFeApp.disableAccountRequest.status" for="field_status">Status</label>
+                    <select class="form-control" name="status" formControlName="status" id="field_status">
+                        <option value="REQUESTED">{{ 'userManagementFeApp.AccountRequestStatus.REQUESTED' | translate }}</option>
+                        <option value="COMPLETED">{{ 'userManagementFeApp.AccountRequestStatus.COMPLETED' | translate }}</option>
+                        <option value="ONHOLD">{{ 'userManagementFeApp.AccountRequestStatus.ONHOLD' | translate }}</option>
+                        <option value="REJECTED">{{ 'userManagementFeApp.AccountRequestStatus.REJECTED' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="userManagementFeApp.disableAccountRequest.createdDate" for="field_createdDate">Created Date</label>
+                    <div class="d-flex">
+                        <input id="field_createdDate" type="datetime-local" class="form-control" name="createdDate" formControlName="createdDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="action-bottom">
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

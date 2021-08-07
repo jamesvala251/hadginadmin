@@ -1,0 +1,28 @@
+{
+  "userManagementFeApp": {
+    "userAddress": {
+      "home": {
+        "title": "UserAddresses",
+        "createLabel": "नया User Address बनाएँ",
+        "createOrEditLabel": "User Address बनाएँ या संपादित करें",
+        "notFound": "No User Addresses found"
+      },
+      "created": "एक नया User Address [identifier: {{ param }}] तैयार है",
+      "updated": "एक User Address [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "User Address [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "User Address [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "User Address"
+      },
+      "userId": "User Id",
+      "address": "Address",
+      "city": "City",
+      "state": "State",
+      "country": "Country",
+      "zipcode": "Zipcode",
+      "addressType": "Address Type"
+    }
+  }
+}

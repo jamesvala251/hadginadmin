@@ -1,0 +1,54 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="messageQueueTopic">
+            <h2><span jhiTranslate="userManagementFeApp.messageQueueTopic.detail.title">Message Queue Topic</span></h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="userManagementFeApp.messageQueueTopic.topicName">Topic Name</span></dt>
+                <dd>
+                    <span>{{ messageQueueTopic.topicName }}</span>
+                </dd>
+                <dt><span jhiTranslate="userManagementFeApp.messageQueueTopic.description">Description</span></dt>
+                <dd>
+                    <span>{{ messageQueueTopic.description }}</span>
+                </dd>
+                <dt><span jhiTranslate="userManagementFeApp.messageQueueTopic.status">Status</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'userManagementFeApp.Status.' + messageQueueTopic.status }}">{{ messageQueueTopic.status }}</span>
+                </dd>
+                <!--
+                <dt><span jhiTranslate="userManagementFeApp.messageQueueTopic.modifiedOn">Modified On</span></dt>
+                <dd>
+                    <span>{{ messageQueueTopic.modifiedOn }}</span>
+                </dd>
+                <dt><span jhiTranslate="userManagementFeApp.messageQueueTopic.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{ messageQueueTopic.modifiedBy }}</span>
+                </dd>
+                -->
+                <dt><span jhiTranslate="userManagementFeApp.messageQueueTopic.communicationChannel">Communication Channel</span></dt>
+                <dd>
+                    <span *ngFor="let communicationChannel of messageQueueTopic.communicationChannels; let last = last">
+                        <a [routerLink]="['/communication-channel', communicationChannel?.id, 'view']">{{ communicationChannel.channelName }}</a>{{ last ? '' : ', ' }}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button" *jhiHasAnyAuthority="['update_message_queue_topic']"
+                    [routerLink]="['/message-queue-topic', messageQueueTopic.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

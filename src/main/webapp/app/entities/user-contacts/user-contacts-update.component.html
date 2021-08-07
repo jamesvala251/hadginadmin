@@ -1,0 +1,145 @@
+<div class="inner-page register-wrp">
+    <div class=" justify-content-center">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <div class="page-header">
+            <h2 id="jhi-user-contacts-heading" jhiTranslate="userManagementFeApp.userContacts.home.createOrEditLabel">Create or edit a User Contacts</h2>
+            </div>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" hidden>
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="userManagementFeApp.userContacts.userId" for="field_userId">User Id</label>
+                    <input readonly type="text" class="form-control" name="userId" id="field_userId"
+                           formControlName="userId"/>
+                    <div *ngIf="editForm.get('userId')!.invalid && (editForm.get('userId')!.dirty || editForm.get('userId')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('userId')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="userManagementFeApp.userContacts.name" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                           formControlName="name"/>
+                    <div *ngIf="editForm.get('name')!.invalid && (editForm.get('name')!.dirty || editForm.get('name')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('name')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="userManagementFeApp.userContacts.relation" for="field_relation">Relation</label>
+                    <select class="form-control" name="relation" formControlName="relation" id="field_relation">
+                        <option value="FATHER">{{ 'userManagementFeApp.Relation.FATHER' | translate }}</option>
+                        <option value="MOTHER">{{ 'userManagementFeApp.Relation.MOTHER' | translate }}</option>
+                        <option value="SPOUSE">{{ 'userManagementFeApp.Relation.SPOUSE' | translate }}</option>
+                        <option value="BROTHER">{{ 'userManagementFeApp.Relation.BROTHER' | translate }}</option>
+                        <option value="SISTER">{{ 'userManagementFeApp.Relation.SISTER' | translate }}</option>
+                        <option value="COUSIN">{{ 'userManagementFeApp.Relation.COUSIN' | translate }}</option>
+                        <option value="SON">{{ 'userManagementFeApp.Relation.SON' | translate }}</option>
+                        <option value="DAUGHTER">{{ 'userManagementFeApp.Relation.DAUGHTER' | translate }}</option>
+                        <option value="UNCLE">{{ 'userManagementFeApp.Relation.UNCLE' | translate }}</option>
+                        <option value="AUNT">{{ 'userManagementFeApp.Relation.AUNT' | translate }}</option>
+                        <option value="NIECE">{{ 'userManagementFeApp.Relation.NIECE' | translate }}</option>
+                        <option value="NEPHEW">{{ 'userManagementFeApp.Relation.NEPHEW' | translate }}</option>
+                    </select>
+                    <div *ngIf="editForm.get('relation')!.invalid && (editForm.get('relation')!.dirty || editForm.get('relation')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('relation')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="userManagementFeApp.userContacts.phoneNumber" for="field_phoneNumber">Phone Number</label>
+                    <input type="text" class="form-control" name="phoneNumber" id="field_phoneNumber"
+                           formControlName="phoneNumber"/>
+                    <div *ngIf="editForm.get('phoneNumber')!.invalid && (editForm.get('phoneNumber')!.dirty || editForm.get('phoneNumber')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('phoneNumber')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="userManagementFeApp.userContacts.email" for="field_email">Email</label>
+                    <input type="text" class="form-control" name="email" id="field_email"
+                           formControlName="email"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="userManagementFeApp.userContacts.address" for="field_address">Address</label>
+                    <input type="text" class="form-control" name="address" id="field_address"
+                           formControlName="address"/>
+                    <div *ngIf="editForm.get('address')!.invalid && (editForm.get('address')!.dirty || editForm.get('address')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('address')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="userManagementFeApp.userContacts.city" for="field_city">City</label>
+                    <input type="text" class="form-control" name="city" id="field_city"
+                           formControlName="city"/>
+                    <div *ngIf="editForm.get('city')!.invalid && (editForm.get('city')!.dirty || editForm.get('city')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('city')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="userManagementFeApp.userContacts.country" for="field_country">Country</label>
+                    <select class="form-control" id="field_country" name="country" formControlName="country" (change)="getStates()">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="countryOption.id === editForm.get('country')!.value?.id ? editForm.get('country')!.value : countryOption" *ngFor="let countryOption of countries; trackBy: trackById">{{ countryOption.name }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="userManagementFeApp.userContacts.state" for="field_state">State</label>
+                    <select class="form-control" id="field_state" name="state" formControlName="state">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="stateOption.id === editForm.get('state')!.value?.id ? editForm.get('state')!.value : stateOption" *ngFor="let stateOption of states; trackBy: trackById">{{ stateOption.name }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="userManagementFeApp.userContacts.zipCode" for="field_zipCode">Zip Code</label>
+                    <input type="text" class="form-control" name="zipCode" id="field_zipCode"
+                           formControlName="zipCode"/>
+                    <div *ngIf="editForm.get('zipCode')!.invalid && (editForm.get('zipCode')!.dirty || editForm.get('zipCode')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('zipCode')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-bottom">
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

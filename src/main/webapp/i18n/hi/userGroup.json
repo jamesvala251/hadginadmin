@@ -1,0 +1,25 @@
+{
+  "userManagementFeApp": {
+    "userGroup": {
+      "home": {
+        "title": "UserGroups",
+        "createLabel": "नया User Group बनाएँ",
+        "createOrEditLabel": "User Group बनाएँ या संपादित करें",
+        "notFound": "No User Groups found"
+      },
+      "created": "एक नया User Group [identifier: {{ param }}] तैयार है",
+      "updated": "एक User Group [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "User Group [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "User Group [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "User Group"
+      },
+      "groupName": "Group Name",
+      "description": "Description",
+      "status": "Status",
+      "roles": "Roles"
+    }
+  }
+}

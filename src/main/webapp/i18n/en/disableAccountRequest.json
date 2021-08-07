@@ -1,0 +1,34 @@
+{
+  "userManagementFeApp": {
+    "disableAccountRequest": {
+      "home": {
+        "title": "Disable Account Requests",
+        "createLabel": "Create a new Disable Account Request",
+        "createOrEditLabel": "Create or edit a Disable Account Request",
+        "notFound": "No Disable Account Requests found"
+      },
+      "created": "A new Disable Account Request is created with identifier {{ param }}",
+      "updated": "A Disable Account Request is updated with identifier {{ param }}",
+      "deleted": "A Disable Account Request is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Disable Account Request {{ id }}?"
+      },
+      "detail": {
+        "title": "Disable Account Request"
+      },
+      "userId": "User Id",
+      "reason": "Reason",
+      "status": "Status",
+      "createdDate": "Created Date",
+      "updatedDate": "Updated Date",
+      "updatedBy": "Updated By"
+    }
+  },
+  "userDetailsServiceApp": {
+    "userDetailsServiceDisableAccountRequest": {
+      "created": "A Disable Account Request is created",
+      "updated": "A Disable Account Request is updated",
+      "deleted": "A Disable Account Request is deleted"
+    }
+  }
+}

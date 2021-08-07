@@ -1,0 +1,26 @@
+{
+  "userManagementFeApp": {
+    "role": {
+      "home": {
+        "title": "Roles",
+        "createLabel": "Создать новый Role",
+        "createOrEditLabel": "Создать или отредактировать Role",
+        "notFound": "No Roles found"
+      },
+      "created": "Новый Role создан с идентификатором {{ param }}",
+      "updated": "Role обновлен с идентификатором {{ param }}",
+      "deleted": "Role удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Role {{ id }}?"
+      },
+      "detail": {
+        "title": "Role"
+      },
+      "roleName": "Role Name",
+      "description": "Description",
+      "status": "Status",
+      "permissions": "Permissions",
+      "userGroups": "User Groups"
+    }
+  }
+}

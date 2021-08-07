@@ -1,0 +1,77 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="userManagementFeApp.permission.home.title">Permissions</span>
+
+        <button *jhiHasAnyAuthority="['create_permission']" id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-permission" [routerLink]="['/permission/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="userManagementFeApp.permission.home.createLabel">
+            Create a new Permission
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="permissions?.length === 0">
+        <span jhiTranslate="userManagementFeApp.permission.home.notFound">No permissions found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="permissions && permissions.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <!--<th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>-->
+                    <th scope="col" ><span jhiTranslate="userManagementFeApp.permission.permissionName">Permission Name</span></th>
+                    <th scope="col" ><span jhiTranslate="userManagementFeApp.permission.category">Category</span></th>
+                    <th scope="col" ><span jhiTranslate="userManagementFeApp.permission.description">Description</span></th>
+                    <th scope="col" ><span jhiTranslate="userManagementFeApp.permission.status">Status</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let permission of permissions ;trackBy: trackId">
+                    <!--<td><a [routerLink]="['/permission', permission.id, 'view']">{{ permission.id }}</a></td>-->
+                    <td>{{ permission.permissionName }}</td>
+                    <td>{{ permission.category }}</td>
+                    <td>{{ permission.description }}</td>
+                    <td jhiTranslate="{{ 'userManagementFeApp.StatusEnum.' + permission.status }}">{{ permission.status }}</td>
+                    <td class="text-right dots-dropdown">
+                        <div class="dropdown">
+                            <a class="three-dots"  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class=""> <i class="ti-more-alt"></i></span>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+                            <a *jhiHasAnyAuthority="['view_permission']"
+                                    [routerLink]="['/permission', permission.id, 'view']"
+                                    class="dropdown-item">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </a>
+
+                            <a *jhiHasAnyAuthority="['update_permission']"
+                                    [routerLink]="['/permission', permission.id, 'edit']"
+                                    class="dropdown-item">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </a>
+
+                            <a (click)="delete(permission)" *jhiHasAnyAuthority="['delete_permission']"
+                                    class="dropdown-item">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </a>
+                            </div>
+                        </div>
+                    </td>
+
+                 
+
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

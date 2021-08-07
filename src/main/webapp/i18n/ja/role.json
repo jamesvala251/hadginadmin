@@ -1,0 +1,26 @@
+{
+  "userManagementFeApp": {
+    "role": {
+      "home": {
+        "title": "Roles",
+        "createLabel": "Role を追加",
+        "createOrEditLabel": "Roleを追加または編集",
+        "notFound": "No Roles found"
+      },
+      "created": "A new Role is created with identifier {{ param }}",
+      "updated": "A Role is updated with identifier {{ param }}",
+      "deleted": "A Role is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Role {{ id }}を削除してもよろしいですか？"
+      },
+      "detail": {
+        "title": "Role"
+      },
+      "roleName": "Role Name",
+      "description": "Description",
+      "status": "Status",
+      "permissions": "Permissions",
+      "userGroups": "User Groups"
+    }
+  }
+}

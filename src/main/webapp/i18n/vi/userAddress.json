@@ -1,0 +1,28 @@
+{
+  "userManagementFeApp": {
+    "userAddress": {
+      "home": {
+        "title": "User Addresses",
+        "createLabel": "Thêm mới một User Address",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật User Address",
+        "notFound": "No User Addresses found"
+      },
+      "created": "Một User Address mới được tạo với định danh {{ param }}",
+      "updated": "Một User Address cập nhật với định danh {{ param }}",
+      "deleted": "Một User Address đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa User Address {{ id }}?"
+      },
+      "detail": {
+        "title": "User Address"
+      },
+      "userId": "User Id",
+      "address": "Address",
+      "city": "City",
+      "state": "State",
+      "country": "Country",
+      "zipcode": "Zipcode",
+      "addressType": "Address Type"
+    }
+  }
+}

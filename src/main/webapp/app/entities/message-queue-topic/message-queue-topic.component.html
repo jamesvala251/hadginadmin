@@ -1,0 +1,75 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="userManagementFeApp.messageQueueTopic.home.title">Message Queue Topics</span>
+
+        <button *jhiHasAnyAuthority="['create_message_queue_topic']" id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-message-queue-topic" [routerLink]="['/message-queue-topic/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="userManagementFeApp.messageQueueTopic.home.createLabel">
+            Create a new Message Queue Topic
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="messageQueueTopics?.length === 0">
+        <span jhiTranslate="userManagementFeApp.messageQueueTopic.home.notFound">No messageQueueTopics found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="messageQueueTopics && messageQueueTopics.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <!--<th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>-->
+                    <th scope="col" ><span jhiTranslate="userManagementFeApp.messageQueueTopic.topicName">Topic Name</span></th>
+                    <th scope="col" ><span jhiTranslate="userManagementFeApp.messageQueueTopic.description">Description</span></th>
+                    <th scope="col" ><span jhiTranslate="userManagementFeApp.messageQueueTopic.status">Status</span></th>
+                    <!--<th scope="col" ><span jhiTranslate="userManagementFeApp.messageQueueTopic.modifiedOn">Modified On</span></th>
+                    <th scope="col" ><span jhiTranslate="userManagementFeApp.messageQueueTopic.modifiedBy">Modified By</span></th>-->
+                    <th scope="col" ><span jhiTranslate="userManagementFeApp.messageQueueTopic.communicationChannel">Communication Channel</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let messageQueueTopic of messageQueueTopics ;trackBy: trackId">
+                    <td><a [routerLink]="['/message-queue-topic', messageQueueTopic.id, 'view']">{{ messageQueueTopic.topicName }}</a></td>
+                    <!--<td>{{ messageQueueTopic.topicName }}</td>-->
+                    <td>{{ messageQueueTopic.description }}</td>
+                    <td jhiTranslate="{{ 'userManagementFeApp.Status.' + messageQueueTopic.status }}">{{ messageQueueTopic.status }}</td>
+                    <!--<td>{{ messageQueueTopic.modifiedOn | date:'medium' }}</td>
+                    <td>{{ messageQueueTopic.modifiedBy }}</td>-->
+                    <td>
+                        <span *ngFor="let communicationChannel of messageQueueTopic.communicationChannels; let last = last">
+                            <a class="form-control-static" [routerLink]="['/communication-channel', communicationChannel?.id, 'view']">{{ communicationChannel.channelName }}</a>{{ last ? '' : ', ' }}
+                        </span>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit" *jhiHasAnyAuthority="['view_message_queue_topic']"
+                                    [routerLink]="['/message-queue-topic', messageQueueTopic.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit" *jhiHasAnyAuthority="['view_message_queue_topic']"
+                                    [routerLink]="['/message-queue-topic', messageQueueTopic.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(messageQueueTopic)" *jhiHasAnyAuthority="['delete_message_queue_topic']"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

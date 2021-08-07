@@ -1,0 +1,108 @@
+<div>
+    <h2>
+        <span id="user-management-page-heading" jhiTranslate="userManagement.home.title">Users</span>
+
+        <button class="btn btn-primary float-right jh-create-entity" [routerLink]="['./new']">
+            <fa-icon icon="plus"></fa-icon> <span jhiTranslate="userManagement.home.createLabel">Create a new User</span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="table-responsive" *ngIf="users">
+        <table class="table table-striped" aria-describedby="user-management-page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="transition.bind(this)">
+                    <!--<th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>-->
+                    <th scope="col"  jhiSortBy="login"><span jhiTranslate="userManagement.login">Login</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="email"><span jhiTranslate="userManagement.email">Email</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"><span jhiTranslate="userManagement.gender">Gender</span></th>
+                    <th scope="col"><span jhiTranslate="userManagement.birthDate">Birth Date</span></th>
+                    <th scope="col"><span jhiTranslate="userManagement.phone">Phone</span></th>
+                    
+                    <th scope="col">Status</th>
+                    <th scope="col"  jhiSortBy="langKey"> <span jhiTranslate="userManagement.langKey">Lang Key</span> <fa-icon icon="sort"></fa-icon></th>
+                    <!--<th scope="col"><span jhiTranslate="userManagement.profiles">Profiles</span></th>
+                    <th scope="col"><span jhiTranslate="userManagement.userGroup">User's Group</span></th>-->
+                    <th scope="col" jhiSortBy="createdDate"><span jhiTranslate="userManagement.createdDate">Created Date</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col" jhiSortBy="lastModifiedBy"><span jhiTranslate="userManagement.lastModifiedBy">Last Modified By</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col" jhiSortBy="lastModifiedDate"><span jhiTranslate="userManagement.lastModifiedDate">Last Modified Date</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody *ngIf="users">
+                <tr *ngFor="let user of users; trackBy: trackIdentity">
+                    <!--<td><a [routerLink]="['./', user.login, 'view']">{{ user.id }}</a></td>-->
+                    <td>{{ user.login }}</td>
+                    <td>{{ user.email }}</td>
+                    <td jhiTranslate="{{ 'userManagement.GenderEnum.' + user.gender }}">{{ user.gender }}</td>
+                    <td>{{ user.birthDate | date:'mediumDate' }}</td>
+                    <td>{{ user.phone }}</td>
+                    <td>
+                        <button class="btn btn-danger btn-sm" (click)="setActive(user, true)" *ngIf="!user.activated"
+                                jhiTranslate="userManagement.deactivated">Deactivated</button>
+                        <button class="btn btn-success btn-sm badge" (click)="setActive(user, false)" *ngIf="user.activated"
+                                [disabled]="!currentAccount || currentAccount.login === user.login" jhiTranslate="userManagement.activated">Activated</button>
+                    </td>
+                    <td>{{ user.langKey }}</td>
+                    <!--<td>
+                        <div *ngFor="let authority of user.authorities">
+                            <span class="badge badge-info">{{ authority }}</span>
+                        </div>
+                    </td>-->
+                    <!--<td>{{ user.userGroup }}</td>-->
+                    <td>{{ user.createdDate | date:'dd/MM/yy HH:mm' }}</td>
+                    <td>{{ user.lastModifiedBy }}</td>
+                    <td>{{ user.lastModifiedDate | date:'dd/MM/yy HH:mm' }}</td>
+                    <td class="text-right dots-dropdown">
+                        
+                        <div class="dropdown">
+                            <a class="three-dots"  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class=""> <i class="ti-more-alt"></i></span>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            
+                                <a 
+                                [routerLink]="['./', user.login, 'view']"
+                                class="dropdown-item">
+                            <fa-icon icon="eye"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </a>
+                         
+                            
+                                <a class="dropdown-item"
+                                [routerLink]="['./', user.login, 'edit']"
+                                queryParamsHandling="merge"
+                                >
+                            <fa-icon icon="pencil-alt"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                                </a>
+                             
+                             
+                                <button  (click)="deleteUser(user)"
+                                class="dropdown-item" [disabled]="!currentAccount || currentAccount.login === user.login">
+                            <fa-icon icon="times"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                       
+                            </button>
+                            </div>
+                          </div>
+                      
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="users">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="transition()"></ngb-pagination>
+        </div>
+    </div>
+</div>

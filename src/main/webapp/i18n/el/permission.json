@@ -1,0 +1,26 @@
+{
+  "userManagementFeApp": {
+    "permission": {
+      "home": {
+        "title": "Permissions",
+        "createLabel": "Δημιουργήστε ένα νέο Permission",
+        "createOrEditLabel": "Δημιουργήστε η επεξεργαστείτε ένα Permission",
+        "notFound": "No Permissions found"
+      },
+      "created": "Ένα νέο Permission έχει δημιουργηθεί με αναγνωριστικό {{ param }}",
+      "updated": "Ένα Permission έχει ενημερωθεί με αναγνωριστικό {{ param }}",
+      "deleted": "Ένα Permission έχει διαγραφτεί με αναγνωριστικό {{ param }}",
+      "delete": {
+        "question": "Είστε βέβαιοι όταν θέλετε να διαγράψετε το ακόλουθο Permission {{ id }};"
+      },
+      "detail": {
+        "title": "Permission"
+      },
+      "permissionName": "Permission Name",
+      "category": "Category",
+      "description": "Description",
+      "status": "Status",
+      "roles": "Roles"
+    }
+  }
+}

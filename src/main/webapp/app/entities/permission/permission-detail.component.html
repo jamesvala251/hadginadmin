@@ -1,0 +1,53 @@
+<div class="inner-page register-wrp">
+    <div class=" justify-content-center">
+        <div *ngIf="permission">
+            <div class="page-header">
+            <h2><span jhiTranslate="userManagementFeApp.permission.detail.title">Permission</span> <!--{{ permission.id }}--></h2>
+            </div>
+
+           
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+               <div class="common-flx">
+                <dt><span jhiTranslate="userManagementFeApp.permission.permissionName">Permission Name</span></dt>
+                <dd>
+                    <span>{{ permission.permissionName }}</span>
+                </dd>
+               </div>
+               <div class="common-flx">
+                <dt><span jhiTranslate="userManagementFeApp.permission.category">Category</span></dt>
+                <dd>
+                    <span>{{ permission.category }}</span>
+                </dd>
+               </div>
+               <div class="common-flx">
+                <dt><span jhiTranslate="userManagementFeApp.permission.description">Description</span></dt>
+                <dd>
+                    <span>{{ permission.description }}</span>
+                </dd>
+               </div>
+               <div class="common-flx">
+                <dt><span jhiTranslate="userManagementFeApp.permission.status">Status</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'userManagementFeApp.StatusEnum.' + permission.status }}">{{ permission.status }}</span>
+                </dd>
+               </div>
+            </dl>
+            <div class="action-bottom">
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn cur-p btn-secondary">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/permission', permission.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+{
+  "userManagementFeApp": {
+    "role": {
+      "home": {
+        "title": "Roles",
+        "createLabel": "Δημιουργήστε ένα νέο Role",
+        "createOrEditLabel": "Δημιουργήστε η επεξεργαστείτε ένα Role",
+        "notFound": "No Roles found"
+      },
+      "created": "Ένα νέο Role έχει δημιουργηθεί με αναγνωριστικό {{ param }}",
+      "updated": "Ένα Role έχει ενημερωθεί με αναγνωριστικό {{ param }}",
+      "deleted": "Ένα Role έχει διαγραφτεί με αναγνωριστικό {{ param }}",
+      "delete": {
+        "question": "Είστε βέβαιοι όταν θέλετε να διαγράψετε το ακόλουθο Role {{ id }};"
+      },
+      "detail": {
+        "title": "Role"
+      },
+      "roleName": "Role Name",
+      "description": "Description",
+      "status": "Status",
+      "permissions": "Permissions",
+      "userGroups": "User Groups"
+    }
+  }
+}

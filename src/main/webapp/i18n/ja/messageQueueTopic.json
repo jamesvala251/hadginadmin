@@ -1,0 +1,27 @@
+{
+  "userManagementFeApp": {
+    "messageQueueTopic": {
+      "home": {
+        "title": "MessageQueueTopics",
+        "createLabel": "Message Queue Topic を追加",
+        "createOrEditLabel": "Message Queue Topicを追加または編集",
+        "notFound": "No Message Queue Topics found"
+      },
+      "created": "A new Message Queue Topic is created with identifier {{ param }}",
+      "updated": "A Message Queue Topic is updated with identifier {{ param }}",
+      "deleted": "A Message Queue Topic is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Message Queue Topic {{ id }}を削除してもよろしいですか？"
+      },
+      "detail": {
+        "title": "Message Queue Topic"
+      },
+      "topicName": "Topic Name",
+      "description": "Description",
+      "status": "Status",
+      "modifiedOn": "Modified On",
+      "modifiedBy": "Modified By",
+      "communicationChannel": "Communication Channel"
+    }
+  }
+}

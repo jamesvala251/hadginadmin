@@ -1,0 +1,12 @@
+entity Country {
+	code String
+    name String
+ }
+entity State {
+	code String
+    name String
+ }
+
+relationship OneToMany {
+  Country{states} to State{country}
+}

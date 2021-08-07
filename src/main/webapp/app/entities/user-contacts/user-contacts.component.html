@@ -1,0 +1,93 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="userManagementFeApp.userContacts.home.title">User Contacts</span>
+
+        <button *jhiHasAnyAuthority="['create_contacts']" id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-user-contacts" [routerLink]="['/user-contacts/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="userManagementFeApp.userContacts.home.createLabel">
+            Create a new User Contacts
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="userContacts?.length === 0">
+        <span jhiTranslate="userManagementFeApp.userContacts.home.notFound">No userContacts found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="userContacts && userContacts.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="userManagementFeApp.userContacts.userId">User Id</span></th>
+                    <th scope="col" ><span jhiTranslate="userManagementFeApp.userContacts.name">Name</span></th>
+                    <th scope="col" ><span jhiTranslate="userManagementFeApp.userContacts.relation">Relation</span></th>
+                    <th scope="col" ><span jhiTranslate="userManagementFeApp.userContacts.phoneNumber">Phone Number</span></th>
+                    <th scope="col" ><span jhiTranslate="userManagementFeApp.userContacts.email">Email</span></th>
+                    <th scope="col" ><span jhiTranslate="userManagementFeApp.userContacts.address">Address</span></th>
+                    <th scope="col" ><span jhiTranslate="userManagementFeApp.userContacts.city">City</span></th>
+                    <th scope="col" ><span jhiTranslate="userManagementFeApp.userContacts.state">State</span></th>
+                    <th scope="col" ><span jhiTranslate="userManagementFeApp.userContacts.country">Country</span></th>
+                    <th scope="col" ><span jhiTranslate="userManagementFeApp.userContacts.zipCode">Zip Code</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let userContacts of userContacts ;trackBy: trackId">
+                    <td>{{ userContacts.userId }}</td>
+                    <td><a [routerLink]="['/user-contacts', userContacts.id, 'view']">{{ userContacts.name }}</a></td>
+                    <td jhiTranslate="{{ 'userManagementFeApp.Relation.' + userContacts.relation }}">{{ userContacts.relation }}</td>
+                    <td>{{ userContacts.phoneNumber }}</td>
+                    <td>{{ userContacts.email }}</td>
+                    <td>{{ userContacts.address }}</td>
+                    <td>{{ userContacts.city }}</td>
+                    <td>
+                        <div *ngIf="userContacts.state">
+                            {{ userContacts.state?.name }}
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="userContacts.country">
+                            {{ userContacts.country?.name }}
+                        </div>
+                    </td>
+                    <td>{{ userContacts.zipCode }}</td>
+                    <td class="text-right dots-dropdown">
+                        <div class="dropdown">
+                            <a class="three-dots"  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class=""> <i class="ti-more-alt"></i></span>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a  *jhiHasAnyAuthority="['view_contacts']"
+                                        [routerLink]="['/user-contacts', userContacts.id, 'view']"
+                                        class="dropdown-item">
+                                    <fa-icon icon="eye"></fa-icon>
+                                    <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                                </a>
+
+                                <a  *jhiHasAnyAuthority="['update_contacts']"
+                                        [routerLink]="['/user-contacts', userContacts.id, 'edit']"
+                                        class="dropdown-item">
+                                    <fa-icon icon="pencil-alt"></fa-icon>
+                                    <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                                </a>
+
+                                <a  *jhiHasAnyAuthority="['delete_contacts']" (click)="delete(userContacts)"
+                                        class="dropdown-item">
+                                    <fa-icon icon="times"></fa-icon>
+                                    <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                                </a>
+                            </div>
+                        </div>
+                    </td>
+
+
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

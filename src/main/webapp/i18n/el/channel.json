@@ -1,0 +1,10 @@
+{
+  "userManagementFeApp": {
+    "Channel": {
+      "null": "",
+      "EMAIL": "Email",
+      "SMS": "SMS",
+      "DATABASE": "Database"
+    }
+  }
+}

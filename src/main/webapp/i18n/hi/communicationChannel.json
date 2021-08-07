@@ -1,0 +1,27 @@
+{
+  "userManagementFeApp": {
+    "communicationChannel": {
+      "home": {
+        "title": "CommunicationChannels",
+        "createLabel": "नया Communication Channel बनाएँ",
+        "createOrEditLabel": "Communication Channel बनाएँ या संपादित करें",
+        "notFound": "No Communication Channels found"
+      },
+      "created": "एक नया Communication Channel [identifier: {{ param }}] तैयार है",
+      "updated": "एक Communication Channel [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Communication Channel [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Communication Channel [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Communication Channel"
+      },
+      "channelName": "Channel Name",
+      "description": "Description",
+      "status": "Status",
+      "modifiedOn": "Modified On",
+      "modifiedBy": "Modified By",
+      "messageQueueTopic": "Message Queue Topic"
+    }
+  }
+}

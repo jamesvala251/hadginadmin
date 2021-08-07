@@ -1,0 +1,75 @@
+<div class="inner-page register-wrp">
+    <div class=" justify-content-center">
+        <div *ngIf="userAddress">
+            <div class="page-header">
+            <h2><span jhiTranslate="userManagementFeApp.userAddress.detail.title">User Address</span> </h2>
+              </div>      
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <div class="common-flx">
+                <dt><span jhiTranslate="userManagementFeApp.userAddress.userId">User Id</span></dt>
+                <dd>
+                    <span>{{ userAddress.userId }}</span>
+                </dd>
+            </div>
+                <div class="common-flx">
+                <dt><span jhiTranslate="userManagementFeApp.userAddress.address">Address</span></dt>
+                <dd>
+                    <span>{{ userAddress.address }}</span>
+                </dd>
+            </div>
+                <div class="common-flx">
+                <dt><span jhiTranslate="userManagementFeApp.userAddress.city">City</span></dt>
+                <dd>
+                    <span>{{ userAddress.city }}</span>
+                </dd>
+            </div>
+                <div class="common-flx">
+                <dt><span jhiTranslate="userManagementFeApp.userAddress.state">State</span></dt>
+                <dd>
+                    <div *ngIf="userAddress.state">
+                        <span>{{ userAddress.state?.name }}</span>
+                    </div>
+                </dd>
+            </div>
+                <div class="common-flx">
+                <dt><span jhiTranslate="userManagementFeApp.userAddress.country">Country</span></dt>
+                <dd>
+                    <div *ngIf="userAddress.country">
+                        <span>{{ userAddress.country?.name }}</span>
+                    </div>
+                </dd>
+            </div>
+                
+                <div class="common-flx">
+                <dt><span jhiTranslate="userManagementFeApp.userAddress.zipcode">Zipcode</span></dt>
+                <dd>
+                    <span>{{ userAddress.zipcode }}</span>
+                </dd>
+            </div>
+                <div class="common-flx">
+                <dt><span jhiTranslate="userManagementFeApp.userAddress.addressType">Address Type</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'userManagementFeApp.AddressType.' + userAddress.addressType }}">{{ userAddress.addressType }}</span>
+                </dd>
+            </div>
+            </dl>
+            <div class="action-bottom">
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn cur-p btn-secondary">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/user-address', userAddress.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+            </div>
+        </div>
+    </div>
+</div>

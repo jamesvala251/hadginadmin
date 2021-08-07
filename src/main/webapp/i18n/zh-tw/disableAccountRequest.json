@@ -1,0 +1,27 @@
+{
+  "userManagementFeApp": {
+    "disableAccountRequest": {
+      "home": {
+        "title": "Disable Account Requests",
+        "createLabel": "建立一筆新的 Disable Account Request",
+        "createOrEditLabel": "建立或編輯 Disable Account Request",
+        "notFound": "No Disable Account Requests found"
+      },
+      "created": "新的 Disable Account Request 建立成功，識別碼為 {{ param }}",
+      "updated": "識別碼為 {{ param }} 的 Disable Account Request 更新成功",
+      "deleted": "識別碼為 {{ param }} 的 Disable Account Request 刪除成功",
+      "delete": {
+        "question": "您確定要刪除 Disable Account Request {{ id }} 嗎?"
+      },
+      "detail": {
+        "title": "Disable Account Request"
+      },
+      "userId": "User Id",
+      "reason": "Reason",
+      "status": "Status",
+      "createdDate": "Created Date",
+      "updatedDate": "Updated Date",
+      "updatedBy": "Updated By"
+    }
+  }
+}

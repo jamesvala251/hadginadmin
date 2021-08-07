@@ -1,0 +1,25 @@
+{
+  "userManagementFeApp": {
+    "userGroup": {
+      "home": {
+        "title": "User Groups",
+        "createLabel": "Thêm mới một User Group",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật User Group",
+        "notFound": "No User Groups found"
+      },
+      "created": "Một User Group mới được tạo với định danh {{ param }}",
+      "updated": "Một User Group cập nhật với định danh {{ param }}",
+      "deleted": "Một User Group đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa User Group {{ id }}?"
+      },
+      "detail": {
+        "title": "User Group"
+      },
+      "groupName": "Group Name",
+      "description": "Description",
+      "status": "Status",
+      "roles": "Roles"
+    }
+  }
+}

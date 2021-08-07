@@ -1,0 +1,28 @@
+{
+  "userManagementFeApp": {
+    "userAddress": {
+      "home": {
+        "title": "User Addresses",
+        "createLabel": "Δημιουργήστε ένα νέο User Address",
+        "createOrEditLabel": "Δημιουργήστε η επεξεργαστείτε ένα User Address",
+        "notFound": "No User Addresses found"
+      },
+      "created": "Ένα νέο User Address έχει δημιουργηθεί με αναγνωριστικό {{ param }}",
+      "updated": "Ένα User Address έχει ενημερωθεί με αναγνωριστικό {{ param }}",
+      "deleted": "Ένα User Address έχει διαγραφτεί με αναγνωριστικό {{ param }}",
+      "delete": {
+        "question": "Είστε βέβαιοι όταν θέλετε να διαγράψετε το ακόλουθο User Address {{ id }};"
+      },
+      "detail": {
+        "title": "User Address"
+      },
+      "userId": "User Id",
+      "address": "Address",
+      "city": "City",
+      "state": "State",
+      "country": "Country",
+      "zipcode": "Zipcode",
+      "addressType": "Address Type"
+    }
+  }
+}

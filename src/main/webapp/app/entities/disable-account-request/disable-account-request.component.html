@@ -1,0 +1,79 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="">Disable Account </span>
+<!--
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-disable-account-request" [routerLink]="['/disable-account-request/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="userManagementFeApp.disableAccountRequest.home.createLabel">
+            Create a new Disable Account Request
+            </span>
+        </button>
+        -->
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="disableAccountRequests?.length === 0">
+        <span jhiTranslate="userManagementFeApp.disableAccountRequest.home.notFound">No disableAccountRequests found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="disableAccountRequests && disableAccountRequests.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <!--<th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>-->
+                    <th scope="col" ><span jhiTranslate="userManagementFeApp.disableAccountRequest.userId">User Id</span></th>
+                    <th scope="col" ><span jhiTranslate="userManagementFeApp.disableAccountRequest.reason">Reason</span></th>
+                    <th scope="col" ><span jhiTranslate="userManagementFeApp.disableAccountRequest.status">Status</span></th>
+                    <th scope="col" ><span jhiTranslate="userManagementFeApp.disableAccountRequest.createdDate">Created Date</span></th>
+                    <th scope="col" ><span jhiTranslate="userManagementFeApp.disableAccountRequest.updatedDate">Updated Date</span></th>
+                    <th scope="col" ><span jhiTranslate="userManagementFeApp.disableAccountRequest.updatedBy">Updated By</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let disableAccountRequest of disableAccountRequests ;trackBy: trackId">
+                    <!--<td><a [routerLink]="['/disable-account-request', disableAccountRequest.id, 'view']">{{ disableAccountRequest.id }}</a></td>-->
+                    <td>{{ disableAccountRequest.userId }}</td>
+                    <td>{{ disableAccountRequest.reason }}</td>
+                    <td jhiTranslate="{{ 'userManagementFeApp.AccountRequestStatus.' + disableAccountRequest.status }}">{{ disableAccountRequest.status }}</td>
+                    <td>{{ disableAccountRequest.createdDate | date:'medium' }}</td>
+                    <td>{{ disableAccountRequest.updatedDate | date:'medium' }}</td>
+                    <td>{{ disableAccountRequest.updatedBy }}</td>
+                    <td class="text-right dots-dropdown">
+                        
+                        <div class="dropdown">
+                            <a class="three-dots"  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class=""> <i class="ti-more-alt"></i></span>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a 
+                                    [routerLink]="['/disable-account-request', disableAccountRequest.id, 'view']"
+                                    class="dropdown-item">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </a>
+
+                            <a *jhiHasAnyAuthority="'ROLE_ADMIN'" 
+                                    [routerLink]="['/disable-account-request', disableAccountRequest.id, 'edit']"
+                                    class="dropdown-item">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </a>
+
+                            <a  (click)="delete(disableAccountRequest)"
+                                    class="dropdown-item">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </a>
+                            </div>
+                        </div>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

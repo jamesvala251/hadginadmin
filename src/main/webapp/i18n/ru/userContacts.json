@@ -1,0 +1,31 @@
+{
+  "userManagementFeApp": {
+    "userContacts": {
+      "home": {
+        "title": "User Contacts",
+        "createLabel": "Создать новый User Contacts",
+        "createOrEditLabel": "Создать или отредактировать User Contacts",
+        "notFound": "No User Contacts found"
+      },
+      "created": "Новый User Contacts создан с идентификатором {{ param }}",
+      "updated": "User Contacts обновлен с идентификатором {{ param }}",
+      "deleted": "User Contacts удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить User Contacts {{ id }}?"
+      },
+      "detail": {
+        "title": "User Contacts"
+      },
+      "userId": "User Id",
+      "name": "Name",
+      "relation": "Relation",
+      "phoneNumber": "Phone Number",
+      "email": "Email",
+      "address": "Address",
+      "city": "City",
+      "state": "State",
+      "country": "Country",
+      "zipCode": "Zip Code"
+    }
+  }
+}

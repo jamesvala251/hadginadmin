@@ -1,0 +1,70 @@
+<div class="inner-page register-wrp">
+    <div class=" justify-content-center">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <div class="page-header"> 
+            <h2 id="jhi-permission-heading" jhiTranslate="userManagementFeApp.permission.home.createOrEditLabel">Create or edit a Permission</h2>
+            </div>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <!--<label for="id" jhiTranslate="global.field.id">ID</label>-->
+                    <input hidden type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="userManagementFeApp.permission.permissionName" for="field_permissionName">Permission Name</label>
+                    <input type="text" class="form-control" name="permissionName" id="field_permissionName"
+                           formControlName="permissionName"/>
+                    <div *ngIf="editForm.get('permissionName')!.invalid && (editForm.get('permissionName')!.dirty || editForm.get('permissionName')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('permissionName')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('permissionName')?.errors?.pattern"
+                               jhiTranslate="entity.validation.patternAlphaNumeric">
+                            This field can only contain letters and digits.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="userManagementFeApp.permission.category" for="field_category">Category</label>
+                    <input type="text" class="form-control" name="category" id="field_category"
+                           formControlName="category"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="userManagementFeApp.permission.description" for="field_description">Description</label>
+                    <input type="text" class="form-control" name="description" id="field_description"
+                           formControlName="description"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="userManagementFeApp.permission.status" for="field_status">Status</label>
+                    <select class="form-control" name="status" formControlName="status" id="field_status">
+                        <option value="ACTIVE">{{ 'userManagementFeApp.StatusEnum.ACTIVE' | translate }}</option>
+                        <option value="INACTIVE">{{ 'userManagementFeApp.StatusEnum.INACTIVE' | translate }}</option>
+                    </select>
+                    <div *ngIf="editForm.get('status')!.invalid && (editForm.get('status')!.dirty || editForm.get('status')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('status')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-bottom">
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

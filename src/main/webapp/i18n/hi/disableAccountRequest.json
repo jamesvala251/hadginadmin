@@ -1,0 +1,27 @@
+{
+  "userManagementFeApp": {
+    "disableAccountRequest": {
+      "home": {
+        "title": "DisableAccountRequests",
+        "createLabel": "नया Disable Account Request बनाएँ",
+        "createOrEditLabel": "Disable Account Request बनाएँ या संपादित करें",
+        "notFound": "No Disable Account Requests found"
+      },
+      "created": "एक नया Disable Account Request [identifier: {{ param }}] तैयार है",
+      "updated": "एक Disable Account Request [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Disable Account Request [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Disable Account Request [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Disable Account Request"
+      },
+      "userId": "User Id",
+      "reason": "Reason",
+      "status": "Status",
+      "createdDate": "Created Date",
+      "updatedDate": "Updated Date",
+      "updatedBy": "Updated By"
+    }
+  }
+}

@@ -1,0 +1,62 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-communication-channel-heading" jhiTranslate="userManagementFeApp.communicationChannel.home.createOrEditLabel">Create or edit a Communication Channel</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <!--<label for="id" jhiTranslate="global.field.id">ID</label>-->
+                    <input hidden type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="userManagementFeApp.communicationChannel.channelName" for="field_channelName">Channel Name</label>
+                    <select class="form-control" name="channelName" formControlName="channelName" id="field_channelName">
+                        <option value="EMAIL">{{ 'userManagementFeApp.Channel.EMAIL' | translate }}</option>
+                        <option value="SMS">{{ 'userManagementFeApp.Channel.SMS' | translate }}</option>
+                        <option value="DATABASE">{{ 'userManagementFeApp.Channel.DATABASE' | translate }}</option>
+                    </select>
+                    <div *ngIf="editForm.get('channelName')!.invalid && (editForm.get('channelName')!.dirty || editForm.get('channelName')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('channelName')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="userManagementFeApp.communicationChannel.description" for="field_description">Description</label>
+                    <input type="text" class="form-control" name="description" id="field_description"
+                           formControlName="description"/>
+                    <div *ngIf="editForm.get('description')!.invalid && (editForm.get('description')!.dirty || editForm.get('description')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('description')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="userManagementFeApp.communicationChannel.status" for="field_status">Status</label>
+                    <select class="form-control" name="status" formControlName="status" id="field_status">
+                        <option value="ACTIVE">{{ 'userManagementFeApp.Status.ACTIVE' | translate }}</option>
+                        <option value="INACTIVE">{{ 'userManagementFeApp.Status.INACTIVE' | translate }}</option>
+                    </select>
+                </div>
+                
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

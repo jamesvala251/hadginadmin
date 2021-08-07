@@ -1,0 +1,29 @@
+{
+  "userManagementFeApp": {
+    "notification": {
+      "home": {
+        "title": "Notifications",
+        "createLabel": "Genera un nuovo Notification",
+        "createOrEditLabel": "Genera o modifica un Notification",
+        "notFound": "No Notifications found"
+      },
+      "created": "&Egrave; stato generato un nuovo Notification con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Notification identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Notification con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Notification {{ id }}?"
+      },
+      "detail": {
+        "title": "Notification"
+      },
+      "sender": "Sender",
+      "receiver": "Receiver",
+      "title": "Title",
+      "details": "Details",
+      "type": "Type",
+      "status": "Status",
+      "modifiedOn": "Modified On",
+      "modifiedBy": "Modified By"
+    }
+  }
+}

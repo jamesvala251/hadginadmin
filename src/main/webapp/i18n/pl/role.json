@@ -1,0 +1,26 @@
+{
+  "userManagementFeApp": {
+    "role": {
+      "home": {
+        "title": "Role",
+        "createLabel": "Dodaj Role",
+        "createOrEditLabel": "Dodaj lub edytuj: Role",
+        "notFound": "No Roles found"
+      },
+      "created": "Utworzono nowy obiekt typu Role z identyfikatorem {{ param }}",
+      "updated": "Uaktualniono obiekt typu Role z identyfikatorem {{ param }}",
+      "deleted": "Usunięto obiekt typu Role z identyfikatorem {{ param }}",
+      "delete": {
+        "question": "Czy na pewno chcesz usunąć Role {{ id }}?"
+      },
+      "detail": {
+        "title": "Role"
+      },
+      "roleName": "Role Name",
+      "description": "Description",
+      "status": "Status",
+      "permissions": "Permissions",
+      "userGroups": "User Groups"
+    }
+  }
+}

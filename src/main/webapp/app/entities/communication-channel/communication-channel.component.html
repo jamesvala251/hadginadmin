@@ -1,0 +1,72 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="userManagementFeApp.communicationChannel.home.title">Communication Channels</span>
+
+        <button *jhiHasAnyAuthority="['create_communication_channel']" id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-communication-channel" [routerLink]="['/communication-channel/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="userManagementFeApp.communicationChannel.home.createLabel">
+            Create a new Communication Channel
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="communicationChannels?.length === 0">
+        <span jhiTranslate="userManagementFeApp.communicationChannel.home.notFound">No communicationChannels found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="communicationChannels && communicationChannels.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <!--<th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>-->
+                    <th scope="col" ><span jhiTranslate="userManagementFeApp.communicationChannel.channelName">Channel Name</span></th>
+                    <th scope="col" ><span jhiTranslate="userManagementFeApp.communicationChannel.description">Description</span></th>
+                    <th scope="col" ><span jhiTranslate="userManagementFeApp.communicationChannel.status">Status</span></th>
+                    <!--<th scope="col" ><span jhiTranslate="userManagementFeApp.communicationChannel.modifiedOn">Modified On</span></th>
+                    <th scope="col" ><span jhiTranslate="userManagementFeApp.communicationChannel.modifiedBy">Modified By</span></th>-->
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let communicationChannel of communicationChannels ;trackBy: trackId">
+                    <!--<td><a [routerLink]="['/communication-channel', communicationChannel.id, 'view']">{{ communicationChannel.id }}</a></td>-->
+                    <td jhiTranslate="{{ 'userManagementFeApp.Channel.' + communicationChannel.channelName }}">
+                        <a [routerLink]="['/communication-channel', communicationChannel.id, 'view']">{{ communicationChannel.id }}</a>
+                        {{ communicationChannel.channelName }}
+                    </td>
+                    <td>{{ communicationChannel.description }}</td>
+                    <td jhiTranslate="{{ 'userManagementFeApp.Status.' + communicationChannel.status }}">{{ communicationChannel.status }}</td>
+                    <!--<td>{{ communicationChannel.modifiedOn | date:'medium' }}</td>
+                    <td>{{ communicationChannel.modifiedBy }}</td>-->
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit" *jhiHasAnyAuthority="['view_communication_channel']"
+                                    [routerLink]="['/communication-channel', communicationChannel.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit" *jhiHasAnyAuthority="['update_communication_channel']"
+                                    [routerLink]="['/communication-channel', communicationChannel.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(communicationChannel)" *jhiHasAnyAuthority="['delete_communication_channel']"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

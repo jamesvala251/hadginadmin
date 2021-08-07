@@ -1,0 +1,24 @@
+{
+  "userManagementFeApp": {
+    "state": {
+      "home": {
+        "title": "States",
+        "createLabel": "Thêm mới một State",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật State",
+        "notFound": "No States found"
+      },
+      "created": "Một State mới được tạo với định danh {{ param }}",
+      "updated": "Một State cập nhật với định danh {{ param }}",
+      "deleted": "Một State đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa State {{ id }}?"
+      },
+      "detail": {
+        "title": "State"
+      },
+      "code": "Code",
+      "name": "Name",
+      "country": "Country"
+    }
+  }
+}

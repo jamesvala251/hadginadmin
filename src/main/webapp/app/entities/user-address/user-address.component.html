@@ -1,0 +1,86 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="userManagementFeApp.userAddress.home.title">User Addresses</span>
+
+        <button *jhiHasAnyAuthority="['create_address']" id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-user-address" [routerLink]="['/user-address/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="userManagementFeApp.userAddress.home.createLabel">
+            Create a new User Address
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="userAddresses?.length === 0">
+        <span jhiTranslate="userManagementFeApp.userAddress.home.notFound">No userAddresses found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="userAddresses && userAddresses.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="userManagementFeApp.userAddress.userId">User Id</span></th>
+                    <th scope="col" ><span jhiTranslate="userManagementFeApp.userAddress.address">Address</span></th>
+                    <th scope="col" ><span jhiTranslate="userManagementFeApp.userAddress.city">City</span></th>
+                    <th scope="col" ><span jhiTranslate="userManagementFeApp.userAddress.state">State</span></th>
+                    <th scope="col" ><span jhiTranslate="userManagementFeApp.userAddress.country">Country</span></th>
+                    <th scope="col" ><span jhiTranslate="userManagementFeApp.userAddress.zipcode">Zipcode</span></th>
+                    <th scope="col" ><span jhiTranslate="userManagementFeApp.userAddress.addressType">Address Type</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let userAddress of userAddresses ;trackBy: trackId">
+                    <td>{{ userAddress.userId }}</td>
+                    <td><a [routerLink]="['/user-address', userAddress.id, 'view']">{{ userAddress.address }}</a></td>
+                    <td>{{ userAddress.city }}</td>
+                    <td>
+                        <div *ngIf="userAddress.state">
+                            {{ userAddress.state?.name }}
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="userAddress.country">
+                            {{ userAddress.country?.name }}
+                        </div>
+                    </td>
+                    <td>{{ userAddress.zipcode }}</td>
+                    <td jhiTranslate="{{ 'userManagementFeApp.AddressType.' + userAddress.addressType }}">{{ userAddress.addressType }}</td>
+                    <td class="text-right dots-dropdown">
+                        <div class="dropdown">
+                            <a class="three-dots"  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class=""> <i class="ti-more-alt"></i></span>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a  *jhiHasAnyAuthority="['view_address']"
+                                    [routerLink]="['/user-address', userAddress.id, 'view']"
+                                    class="dropdown-item">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </a>
+
+                            <a  *jhiHasAnyAuthority="['update_address']"
+                                    [routerLink]="['/user-address', userAddress.id, 'edit']"
+                                    class="dropdown-item">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </a>
+
+                            <a  (click)="delete(userAddress)" *jhiHasAnyAuthority="['delete_address']"
+                                    class="dropdown-item">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </a>
+                            </div>
+                        </div>
+                    </td>
+
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

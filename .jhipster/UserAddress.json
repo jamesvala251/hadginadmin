@@ -1,0 +1,54 @@
+{
+  "name": "UserAddress",
+  "fields": [
+    {
+      "fieldName": "userId",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "address",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "city",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "state",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "country",
+      "fieldType": "Country",
+      "fieldValues": "USA (USA),CANADA (Canada),UK (UnitedKingdom),GERMANY (Germany),JAPAN (Japan),AUSTRALIA (Australia),NEWZEALAND (NewZealand),RUSSIA (Russia),FRANCE (France),ITALY (Italy),INDIA (India),PAKISTAN (Pakistan),AFGHANISTAN (Afghanistan),SRILANKA (SriLanka)",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "zipcode",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "addressType",
+      "fieldType": "AddressType",
+      "fieldValues": "HEADOFFICE (Head Office),RIGIONALOFFICE (Regional Office),BRANCHOFFICE (Branch Office),SUBDIVISION (Subdivision)"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20200817134312",
+  "entityTableName": "user_address",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*",
+  "enableEntityAudit": true
+}

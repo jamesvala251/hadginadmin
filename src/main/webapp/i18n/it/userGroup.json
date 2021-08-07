@@ -1,0 +1,25 @@
+{
+  "userManagementFeApp": {
+    "userGroup": {
+      "home": {
+        "title": "UserGroups",
+        "createLabel": "Genera un nuovo User Group",
+        "createOrEditLabel": "Genera o modifica un User Group",
+        "notFound": "No User Groups found"
+      },
+      "created": "&Egrave; stato generato un nuovo User Group con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato User Group identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato User Group con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare User Group {{ id }}?"
+      },
+      "detail": {
+        "title": "User Group"
+      },
+      "groupName": "Group Name",
+      "description": "Description",
+      "status": "Status",
+      "roles": "Roles"
+    }
+  }
+}

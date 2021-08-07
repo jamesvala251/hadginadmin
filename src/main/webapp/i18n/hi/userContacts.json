@@ -1,0 +1,31 @@
+{
+  "userManagementFeApp": {
+    "userContacts": {
+      "home": {
+        "title": "UserContacts",
+        "createLabel": "नया User Contacts बनाएँ",
+        "createOrEditLabel": "User Contacts बनाएँ या संपादित करें",
+        "notFound": "No User Contacts found"
+      },
+      "created": "एक नया User Contacts [identifier: {{ param }}] तैयार है",
+      "updated": "एक User Contacts [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "User Contacts [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "User Contacts [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "User Contacts"
+      },
+      "userId": "User Id",
+      "name": "Name",
+      "relation": "Relation",
+      "phoneNumber": "Phone Number",
+      "email": "Email",
+      "address": "Address",
+      "city": "City",
+      "state": "State",
+      "country": "Country",
+      "zipCode": "Zip Code"
+    }
+  }
+}

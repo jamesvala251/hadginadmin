@@ -1,0 +1,27 @@
+{
+  "userManagementFeApp": {
+    "communicationChannel": {
+      "home": {
+        "title": "Communication Channels",
+        "createLabel": "创建新 Communication Channel",
+        "createOrEditLabel": "创建或编辑 Communication Channel",
+        "notFound": "No Communication Channels found"
+      },
+      "created": "Communication Channel {{ param }} 创建成功",
+      "updated": "Communication Channel {{ param }} 更新成功",
+      "deleted": "Communication Channel {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Communication Channel {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Communication Channel"
+      },
+      "channelName": "Channel Name",
+      "description": "Description",
+      "status": "Status",
+      "modifiedOn": "Modified On",
+      "modifiedBy": "Modified By",
+      "messageQueueTopic": "Message Queue Topic"
+    }
+  }
+}

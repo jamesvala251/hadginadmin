@@ -1,0 +1,27 @@
+{
+  "userManagementFeApp": {
+    "messageQueueTopic": {
+      "home": {
+        "title": "Message Queue Topics",
+        "createLabel": "Create a new Message Queue Topic",
+        "createOrEditLabel": "Create or edit a Message Queue Topic",
+        "notFound": "No Message Queue Topics found"
+      },
+      "created": "A new Message Queue Topic is created with identifier {{ param }}",
+      "updated": "A Message Queue Topic is updated with identifier {{ param }}",
+      "deleted": "A Message Queue Topic is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Message Queue Topic {{ id }}?"
+      },
+      "detail": {
+        "title": "Message Queue Topic"
+      },
+      "topicName": "Topic Name",
+      "description": "Description",
+      "status": "Status",
+      "modifiedOn": "Modified On",
+      "modifiedBy": "Modified By",
+      "communicationChannel": "Communication Channel"
+    }
+  }
+}

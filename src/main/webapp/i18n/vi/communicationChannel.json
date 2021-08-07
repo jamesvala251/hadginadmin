@@ -1,0 +1,27 @@
+{
+  "userManagementFeApp": {
+    "communicationChannel": {
+      "home": {
+        "title": "Communication Channels",
+        "createLabel": "Thêm mới một Communication Channel",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Communication Channel",
+        "notFound": "No Communication Channels found"
+      },
+      "created": "Một Communication Channel mới được tạo với định danh {{ param }}",
+      "updated": "Một Communication Channel cập nhật với định danh {{ param }}",
+      "deleted": "Một Communication Channel đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Communication Channel {{ id }}?"
+      },
+      "detail": {
+        "title": "Communication Channel"
+      },
+      "channelName": "Channel Name",
+      "description": "Description",
+      "status": "Status",
+      "modifiedOn": "Modified On",
+      "modifiedBy": "Modified By",
+      "messageQueueTopic": "Message Queue Topic"
+    }
+  }
+}

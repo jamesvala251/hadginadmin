@@ -1,0 +1,31 @@
+{
+  "userManagementFeApp": {
+    "userContacts": {
+      "home": {
+        "title": "User Contacts",
+        "createLabel": "Δημιουργήστε ένα νέο User Contacts",
+        "createOrEditLabel": "Δημιουργήστε η επεξεργαστείτε ένα User Contacts",
+        "notFound": "No User Contacts found"
+      },
+      "created": "Ένα νέο User Contacts έχει δημιουργηθεί με αναγνωριστικό {{ param }}",
+      "updated": "Ένα User Contacts έχει ενημερωθεί με αναγνωριστικό {{ param }}",
+      "deleted": "Ένα User Contacts έχει διαγραφτεί με αναγνωριστικό {{ param }}",
+      "delete": {
+        "question": "Είστε βέβαιοι όταν θέλετε να διαγράψετε το ακόλουθο User Contacts {{ id }};"
+      },
+      "detail": {
+        "title": "User Contacts"
+      },
+      "userId": "User Id",
+      "name": "Name",
+      "relation": "Relation",
+      "phoneNumber": "Phone Number",
+      "email": "Email",
+      "address": "Address",
+      "city": "City",
+      "state": "State",
+      "country": "Country",
+      "zipCode": "Zip Code"
+    }
+  }
+}

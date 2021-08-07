@@ -1,0 +1,198 @@
+<div class="inner-page register-wrp">
+    <div class=" justify-content-center common-form">
+       <div class="heading-title">
+        <h2 class="main-title" jhiTranslate="" [translateValues]="{ username: account.login }" *ngIf="account">Profile </h2>
+       </div>
+            <div class="alert alert-success" *ngIf="success" jhiTranslate="settings.messages.success">
+                <strong>Settings saved!</strong>
+            </div>
+            <jhi-alert-error></jhi-alert-error>
+            <jhi-alert></jhi-alert>
+
+            <form name="editPictureForm" role="form" novalidate (ngSubmit)="pictureSave()" [formGroup]="editPictureForm">
+                <div class="user-profile-pic-update">
+                    <div class="form-group" [hidden]="!editPictureForm.get('id')!.value">
+                        <!--<label for="id" jhiTranslate="global.field.id">ID</label>-->
+                        <input hidden type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                       
+                    </div>
+
+                    <div hidden class="form-group">
+                        <label class="form-control-label" jhiTranslate="userManagementFeApp.profilePicture.userId" for="field_userId">User Id</label>
+                        <input type="text" class="form-control" name="userId" id="field_userId"
+                            formControlName="userId"/>
+                            
+                    </div>
+
+                    <div hidden class="form-group">
+                        <label class="form-control-label" jhiTranslate="userManagementFeApp.profilePicture.pictureName" for="field_pictureName">Picture Name</label>
+                        <input type="text" class="form-control" name="pictureName" id="field_pictureName"
+                            formControlName="pictureName"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="userManagementFeApp.profilePicture.pictureImage" for="field_pictureImage">Picture Image</label>
+    
+                        <div class="profile-pic">
+                            <img [src]="'data:' + editPictureForm.get('pictureImageContentType')!.value + ';base64,' + editPictureForm.get('pictureImage')!.value" style="max-height: 100px;" *ngIf="editPictureForm.get('pictureImage')!.value" alt="profilePicture image"/>
+                            <div class="d-flex justify-content-center align-items-center">
+                                <div class="mr-3">
+                                    <input type="file" id="file_pictureImage" (change)="setFileData($event, 'pictureImage', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                                    <label for="file_pictureImage" class="btn-2">upload</label>
+                                    </div>
+                            <div *ngIf="editPictureForm.get('pictureImage')!.value" class="form-text text-danger clearfix">
+                               
+                                <button type="submit" id="save-entity" [disabled]="editPictureForm.invalid || isSaving" class="btn btn-primary">
+                                    <span jhiTranslate="entity.action.save">Save</span>
+                                </button>
+                            </div>
+                           
+                            </div>
+                        </div>
+                        <input type="hidden" class="form-control" name="pictureImage" id="field_pictureImage"
+                            formControlName="pictureImage"/>
+                        <input type="hidden" class="form-control" name="pictureImageContentType" id="field_pictureImageContentType"
+                            formControlName="pictureImageContentType" />
+                        <div *ngIf="editPictureForm.get('pictureImage')!.invalid && (editPictureForm.get('pictureImage')!.dirty || editPictureForm.get('pictureImage')!.touched)">
+                            <small class="form-text text-danger"
+                                *ngIf="editPictureForm.get('pictureImage')?.errors?.required" jhiTranslate="entity.validation.required">
+                            This field is required.
+                            </small>
+                        </div>
+                    </div>
+                    
+                </div>
+
+               
+            </form>
+            <form name="form" role="form" (ngSubmit)="save()" [formGroup]="settingsForm" *ngIf="account" novalidate>
+                <div class="form-group">
+                    <label class="form-control-label" for="firstName" jhiTranslate="settings.form.firstname">First Name</label>
+                    <input type="text" class="form-control" id="firstName" name="firstName" placeholder="{{ 'settings.form.firstname.placeholder' | translate }}"
+                           formControlName="firstName">
+
+                    <div *ngIf="settingsForm.get('firstName')!.invalid && (settingsForm.get('firstName')!.dirty || settingsForm.get('firstName')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="settingsForm.get('firstName')?.errors?.required"
+                               jhiTranslate="settings.messages.validate.firstname.required">
+                            Your first name is required.
+                        </small>
+
+                        <small class="form-text text-danger"
+                               *ngIf="settingsForm.get('firstName')?.errors?.minlength"
+                               jhiTranslate="settings.messages.validate.firstname.minlength">
+                            Your first name is required to be at least 1 character.
+                        </small>
+
+                        <small class="form-text text-danger"
+                               *ngIf="settingsForm.get('firstName')?.errors?.maxlength"
+                               jhiTranslate="settings.messages.validate.firstname.maxlength">
+                            Your first name cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="lastName" jhiTranslate="settings.form.lastname">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" name="lastName" placeholder="{{ 'settings.form.lastname.placeholder' | translate }}"
+                           formControlName="lastName">
+
+                    <div *ngIf="settingsForm.get('lastName')!.invalid && (settingsForm.get('lastName')!.dirty || settingsForm.get('lastName')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="settingsForm.get('lastName')?.errors?.required"
+                               jhiTranslate="settings.messages.validate.lastname.required">
+                            Your last name is required.
+                        </small>
+
+                        <small class="form-text text-danger"
+                               *ngIf="settingsForm.get('lastName')?.errors?.minlength"
+                               jhiTranslate="settings.messages.validate.lastname.minlength">
+                            Your last name is required to be at least 1 character.
+                        </small>
+
+                        <small class="form-text text-danger"
+                               *ngIf="settingsForm.get('lastName')?.errors?.maxlength"
+                               jhiTranslate="settings.messages.validate.lastname.maxlength">
+                            Your last name cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="email" jhiTranslate="global.form.email.label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="{{ 'global.form.email.placeholder' | translate }}"
+                           formControlName="email">
+
+                    <div *ngIf="settingsForm.get('email')!.invalid && (settingsForm.get('email')!.dirty || settingsForm.get('email')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="settingsForm.get('email')?.errors?.required"
+                               jhiTranslate="global.messages.validate.email.required">
+                            Your email is required.
+                        </small>
+
+                        <small class="form-text text-danger"
+                               *ngIf="settingsForm.get('email')?.errors?.email"
+                               jhiTranslate="global.messages.validate.email.invalid">
+                            Your email is invalid.
+                        </small>
+
+                        <small class="form-text text-danger"
+                               *ngIf="settingsForm.get('email')?.errors?.minlength"
+                               jhiTranslate="global.messages.validate.email.minlength">
+                            Your email is required to be at least 5 characters.
+                        </small>
+
+                        <small class="form-text text-danger"
+                               *ngIf="settingsForm.get('email')?.errors?.maxlength"
+                               jhiTranslate="global.messages.validate.email.maxlength">
+                            Your email cannot be longer than 100 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="userManagement.gender" for="field_gender">Gender</label>
+                    <select class="form-control" name="gender" formControlName="gender" id="field_gender">
+                        <option value="MALE">{{ 'userManagement.GenderEnum.MALE' | translate }}</option>
+                        <option value="FEMALE">{{ 'userManagement.GenderEnum.FEMALE' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="userManagement.birthDate" for="field_birthDate">Birth Date</label>
+                    <div class="input-group">
+                        <input id="field_birthDate" type="date" class="form-control" name="birthDate"   formControlName="birthDate"/>
+                        <!-- <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" ><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span> -->
+                    </div>
+                </div>
+
+                <!-- <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="userManagement.birthDate" for="field_birthDate">Birth Date</label>
+                    <div class="input-group">
+                        <input id="field_birthDate" type="text" class="form-control" name="birthDate" ngbDatepicker #birthDateDp="ngbDatepicker" formControlName="birthDate"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="birthDateDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div> -->
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="userManagement.phone" for="field_phone">Phone</label>
+                    <input type="text" class="form-control" name="phone" id="field_phone"
+                           formControlName="phone"/>
+                </div>
+
+                <div class="form-group" *ngIf="languages && languages.length > 0">
+                    <label for="langKey" jhiTranslate="settings.form.language">Language</label>
+                    <select class="form-control" id="langKey" name="langKey" formControlName="langKey">
+                        <option *ngFor="let language of languages" [value]="language">{{ language | findLanguageFromKey }}</option>
+                    </select>
+                </div>
+                <div class="text-center">
+                <button type="submit" [disabled]="settingsForm.invalid" class="btn btn-primary" jhiTranslate="settings.form.button">Save</button>
+                </div>
+            </form>
+      
+    </div>
+</div>

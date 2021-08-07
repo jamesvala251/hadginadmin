@@ -1,0 +1,27 @@
+{
+  "userManagementFeApp": {
+    "disableAccountRequest": {
+      "home": {
+        "title": "DisableAccountRequests",
+        "createLabel": "Disable Account Request を追加",
+        "createOrEditLabel": "Disable Account Requestを追加または編集",
+        "notFound": "No Disable Account Requests found"
+      },
+      "created": "A new Disable Account Request is created with identifier {{ param }}",
+      "updated": "A Disable Account Request is updated with identifier {{ param }}",
+      "deleted": "A Disable Account Request is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Disable Account Request {{ id }}を削除してもよろしいですか？"
+      },
+      "detail": {
+        "title": "Disable Account Request"
+      },
+      "userId": "User Id",
+      "reason": "Reason",
+      "status": "Status",
+      "createdDate": "Created Date",
+      "updatedDate": "Updated Date",
+      "updatedBy": "Updated By"
+    }
+  }
+}

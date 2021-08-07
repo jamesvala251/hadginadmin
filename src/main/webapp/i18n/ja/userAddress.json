@@ -1,0 +1,28 @@
+{
+  "userManagementFeApp": {
+    "userAddress": {
+      "home": {
+        "title": "UserAddresses",
+        "createLabel": "User Address を追加",
+        "createOrEditLabel": "User Addressを追加または編集",
+        "notFound": "No User Addresses found"
+      },
+      "created": "A new User Address is created with identifier {{ param }}",
+      "updated": "A User Address is updated with identifier {{ param }}",
+      "deleted": "A User Address is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "User Address {{ id }}を削除してもよろしいですか？"
+      },
+      "detail": {
+        "title": "User Address"
+      },
+      "userId": "User Id",
+      "address": "Address",
+      "city": "City",
+      "state": "State",
+      "country": "Country",
+      "zipcode": "Zipcode",
+      "addressType": "Address Type"
+    }
+  }
+}

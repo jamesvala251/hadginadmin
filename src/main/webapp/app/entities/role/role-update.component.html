@@ -1,0 +1,94 @@
+<div class="inner-page register-wrp">
+    <div class=" justify-content-center">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <div class="page-header">
+                <h2 id="jhi-role-heading" jhiTranslate="userManagementFeApp.role.home.createOrEditLabel">Create or edit a Role</h2>
+            </div>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <!--<label for="id" jhiTranslate="global.field.id">ID</label>-->
+                    <input type="text" hidden class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="userManagementFeApp.role.roleName" for="field_roleName">Role Name</label>
+                    <input type="text" class="form-control" name="roleName" id="field_roleName"
+                           formControlName="roleName"/>
+                    <div *ngIf="editForm.get('roleName')!.invalid && (editForm.get('roleName')!.dirty || editForm.get('roleName')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('roleName')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('roleName')?.errors?.pattern"
+                               jhiTranslate="entity.validation.patternAlphaNumeric">
+                            This field can only contain letters and digits.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="userManagementFeApp.role.description" for="field_description">Description</label>
+                    <input type="text" class="form-control" name="description" id="field_description"
+                           formControlName="description"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="userManagementFeApp.role.status" for="field_status">Status</label>
+                    <select class="form-control" name="status" formControlName="status" id="field_status">
+                        <option value="ACTIVE">{{ 'userManagementFeApp.StatusEnum.ACTIVE' | translate }}</option>
+                        <option value="INACTIVE">{{ 'userManagementFeApp.StatusEnum.INACTIVE' | translate }}</option>
+                    </select>
+                    <div *ngIf="editForm.get('status')!.invalid && (editForm.get('status')!.dirty || editForm.get('status')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('status')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+    
+                <div class="wrp-wrp">
+
+                        <div class="form-group">
+                            <div class="row">
+            
+                                <div class="col-md-3 ex-wro">
+                                    <strong class="lbl-wrp">  <p jhiTranslate="userManagementFeApp.role.permissions" for="field_permissions">Permissions</p></strong>
+                                <span class="view-wrp"> View</span></div>
+                                <div class="col-md-3">Create</div>
+                                <div class="col-md-3">Update</div>
+                                <div class="col-md-3">Delete</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="permission-wrp col-md-3" formArrayName="permissions" *ngFor="let per of permissionsArray.controls; let i = index">
+                                <label *ngIf="permissions[i].displayCategory">{{permissions[i].category}}</label>
+                                
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" [formControlName]="i" value={{permissions[i].id}}>  
+                                    </label>
+                                </div>
+                                </div>
+                        
+
+                            
+                            
+                            </div>
+                    </div>
+               
+
+            <div class="action-bottom">
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

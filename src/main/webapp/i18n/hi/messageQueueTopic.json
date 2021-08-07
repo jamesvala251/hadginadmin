@@ -1,0 +1,27 @@
+{
+  "userManagementFeApp": {
+    "messageQueueTopic": {
+      "home": {
+        "title": "MessageQueueTopics",
+        "createLabel": "नया Message Queue Topic बनाएँ",
+        "createOrEditLabel": "Message Queue Topic बनाएँ या संपादित करें",
+        "notFound": "No Message Queue Topics found"
+      },
+      "created": "एक नया Message Queue Topic [identifier: {{ param }}] तैयार है",
+      "updated": "एक Message Queue Topic [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Message Queue Topic [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Message Queue Topic [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Message Queue Topic"
+      },
+      "topicName": "Topic Name",
+      "description": "Description",
+      "status": "Status",
+      "modifiedOn": "Modified On",
+      "modifiedBy": "Modified By",
+      "communicationChannel": "Communication Channel"
+    }
+  }
+}

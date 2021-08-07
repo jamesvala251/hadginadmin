@@ -1,0 +1,45 @@
+
+entity MessageQueueTopic {
+    topicName String required
+	description String required
+	status Status
+    modifiedOn Instant
+    modifiedBy String
+}
+entity CommunicationChannel {
+    channelName Channel required
+	description String required
+	status Status
+    modifiedOn Instant
+    modifiedBy String
+}
+entity Notification {
+	sender String required 
+    receiver String required
+    title String required
+	details String required
+    type String required
+	status ViewStatus
+    modifiedOn Instant
+    modifiedBy String
+}
+enum Status {
+	ACTIVE(Active)
+    INACTIVE(Inactive)
+ }
+ enum Channel {
+	EMAIL(Email)
+    SMS(SMS)
+    DATABASE(Database)
+ }
+ enum ViewStatus {
+	UNREAD(Unread)
+    READ(Read)
+    DELETE(Delete)
+    ARCHIVE(Archive)
+ }
+ relationship ManyToMany {
+  MessageQueueTopic{communicationChannel} to CommunicationChannel{messageQueueTopic}
+}
+ 
+

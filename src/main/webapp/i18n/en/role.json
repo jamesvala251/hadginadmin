@@ -1,0 +1,33 @@
+{
+  "userManagementFeApp": {
+    "role": {
+      "home": {
+        "title": "Roles",
+        "createLabel": "Create a new Role",
+        "createOrEditLabel": "Create or edit a Role",
+        "notFound": "No Roles found"
+      },
+      "created": "A new Role is created with identifier {{ param }}",
+      "updated": "A Role is updated with identifier {{ param }}",
+      "deleted": "A Role is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Role {{ id }}?"
+      },
+      "detail": {
+        "title": "Role"
+      },
+      "roleName": "Role Name",
+      "description": "Description",
+      "status": "Status",
+      "permissions": "Permissions",
+      "userGroups": "User Groups"
+    }
+  },
+  "userManagementServiceApp": {
+    "userManagementServiceRole": {
+      "created": "A new Role is created",
+      "updated": "A Role is updated",
+      "deleted": "A Role is deleted"
+    }
+  }
+}

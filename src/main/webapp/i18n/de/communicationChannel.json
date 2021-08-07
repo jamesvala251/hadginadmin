@@ -1,0 +1,27 @@
+{
+  "userManagementFeApp": {
+    "communicationChannel": {
+      "home": {
+        "title": "Communication Channels",
+        "createLabel": "Communication Channel erstellen",
+        "createOrEditLabel": "Communication Channel erstellen oder bearbeiten",
+        "notFound": "No Communication Channels found"
+      },
+      "created": "Communication Channel erstellt mit ID {{ param }}",
+      "updated": "Communication Channel aktualisiert mit ID {{ param }}",
+      "deleted": "Communication Channel gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Communication Channel {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Communication Channel"
+      },
+      "channelName": "Channel Name",
+      "description": "Description",
+      "status": "Status",
+      "modifiedOn": "Modified On",
+      "modifiedBy": "Modified By",
+      "messageQueueTopic": "Message Queue Topic"
+    }
+  }
+}

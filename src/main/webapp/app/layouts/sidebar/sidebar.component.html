@@ -1,0 +1,209 @@
+<div class="sidebar">
+    <div class="sidebar-inner">
+        <!-- ### $Sidebar Header ### -->
+        <div class="sidebar-logo">
+            <div class="peers ai-c fxw-nw">
+                <div class="peer peer-greed">
+                    <a class="sidebar-link td-n" href="index.html">
+                        <div class="peers ai-c fxw-nw">
+                            <div class="peer">
+                                <div class="logo">
+                                    <img src="../../../content/images/logo.png" alt="">
+                                </div>
+                            </div>
+                            <div class="peer peer-greed">
+                                <h5 class="lh-1 mB-0 logo-text">Hedgina</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="peer">
+                    <div class="mobile-toggle sidebar-toggle">
+                        <a href="" class="td-n">
+                            <i class="ti-arrow-circle-left"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="" id="navbarResponsive"  >
+        <!-- ### $Sidebar Menu ### -->
+        <ul class="sidebar-menu scrollable pos-r" > 
+
+            <!-- <li class="nav-item" >
+                <a class="nav-link"  (click)="collapseNavbar()">
+                    <span>
+                        <fa-icon icon="home"></fa-icon>
+                        <span jhiTranslate="global.menu.home">Home</span>
+                    </span>
+                </a>
+            </li> -->
+
+            <li class="nav-item mT-30 " display="dynamic" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                <a class="sidebar-link"  routerLink="/" (click)="collapseNavbar()">
+                <span class="icon-holder">
+                  <i class="c-blue-500 ti-home"></i>
+                </span>
+                    <span class="title">Home</span>
+                </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="dropdown-toggle" href="javascript:void(0);">
+                <span class="icon-holder">
+                  <i class="c-orange-500 ti-user"></i>
+                </span>
+                    <span class="title">User Management</span>
+                    <span class="arrow">
+                  <i class="ti-angle-right"></i>
+                </span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a class="sidebar-link" routerLink="admin/user-management" routerLinkActive="active" (click)="collapseNavbar()">
+                            
+                            <span >User List</span>
+                        </a>
+                    </li>
+                    <li  *jhiHasAnyAuthority="['create_role', 'view_role', 'update_role', 'delete_role']">
+                        <a class="sidebar-link" routerLink="role" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            
+                            <span jhiTranslate="global.menu.entities.role">Role</span>
+                        </a>
+                    </li>
+                    <li *jhiHasAnyAuthority="['create_UserGroup', 'view_UserGroup', 'update_UserGroup', 'delete_UserGroup']" >
+                        <a class="sidebar-link" routerLink="user-group" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                       
+                            <span jhiTranslate="global.menu.entities.userGroup">User Group</span>
+                        </a>
+                    </li>
+                    <li *jhiHasAnyAuthority="['create_permission', 'view_permission', 'update_permission', 'delete_permission']">
+                        <a class="sidebar-link" routerLink="permission" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+            
+                            <span jhiTranslate="global.menu.entities.permission">Permission</span>
+                        </a>
+                    </li>
+                   
+                </ul>
+            </li>
+
+
+            <li class="nav-item dropdown">
+                <a class="dropdown-toggle" href="javascript:void(0);">
+                <span class="icon-holder">
+                    <i class="c-purple-500 ti-location-pin"></i>
+                  </span>
+                    <span class="title">Location</span>
+                    <span class="arrow">
+                    <i class="ti-angle-right"></i>
+                  </span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li *jhiHasAnyAuthority="['create_address', 'view_address', 'update_address', 'delete_address']">
+                        <a class="sidebar-link" routerLink="user-address" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                          
+                            <span >List of locations</span>
+                        </a>
+                    </li>
+                  
+                    <!-- <li>
+                        <a class="sidebar-link" routerLink="country" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                         
+                            <span jhiTranslate="global.menu.entities.country">Country</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="sidebar-link" routerLink="state" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                
+                            <span jhiTranslate="global.menu.entities.state">State</span>
+                        </a>
+                    </li> -->
+                </ul>
+            </li>
+
+           
+            <li *jhiHasAnyAuthority="['create_contacts', 'view_contacts', 'update_contacts', 'delete_contacts']">
+                <a class="sidebar-link" routerLink="user-contacts" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                    <span class="icon-holder">
+                        <i class="c-deep-orange-500 ti-mobile"></i>
+                      </span>
+                    <span> Contacts</span>
+                </a>
+            </li>
+           
+            <li>
+                <a class="sidebar-link" routerLink="admin/entity-audit" routerLinkActive="active" (click)="collapseNavbar()">
+                    <span class="icon-holder">
+                        <i class="c-deep-purple-500 ti-notepad"></i>
+                      </span>
+                    <span >Activity Log</span>
+                </a>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="dropdown-toggle" href="javascript:void(0);">
+                <span class="icon-holder">
+                    <i class="c-red-500 ti-settings"></i>
+                  </span>
+                    <span class="title">Setting</span>
+                    <span class="arrow">
+                    <i class="ti-angle-right"></i>
+                  </span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li >
+                        <a class="sidebar-link" routerLink="account/settings" routerLinkActive="active" (click)="collapseNavbar()">
+                           
+                            <span>Profile</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="sidebar-link" routerLink="notification" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                           
+                            <span jhiTranslate="global.menu.entities.notification">Notification</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="sidebar-link" routerLink="disable-account-request" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            
+                            <span>Disable Account </span>
+                        </a>
+                    </li>
+                
+              
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="dropdown-toggle" href="javascript:void(0);">
+                <span class="icon-holder">
+                    <i class="c-red-500 ti-lock"></i>
+                  </span>
+                    <span class="title">Security</span>
+                    <span class="arrow">
+                    <i class="ti-angle-right"></i>
+                  </span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li >
+                        <a class="sidebar-link" routerLink="account/password" routerLinkActive="active" (click)="collapseNavbar()">
+                            
+                            <span jhiTranslate="global.menu.account.password">Change Password</span>
+                        </a>
+                    </li>
+                
+                
+              
+                </ul>
+            </li>
+            <li >
+                <a class="sidebar-link" (click)="logout()" id="logout">
+                    <span class="icon-holder">
+                        <i class="c-orange-500 ti-power-off"></i>
+                      </span>
+                    <span jhiTranslate="global.menu.account.logout">Sign out</span>
+                </a>
+            </li>
+           
+        </ul>
+        </div>
+    </div>
+</div>

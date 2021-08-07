@@ -1,0 +1,26 @@
+{
+  "userManagementFeApp": {
+    "role": {
+      "home": {
+        "title": "Roles",
+        "createLabel": "สร้าง Role",
+        "createOrEditLabel": "สร้างหรือแก้ไข Role",
+        "notFound": "No Roles found"
+      },
+      "created": "Role ถูกสร้างด้วย {{ param }}",
+      "updated": "Role ถูกแก้ไขด้วย {{ param }}",
+      "deleted": "Role ถูกลบด้วย {{ param }}",
+      "delete": {
+        "question": "คุณต้องการที่จะลบ Role {{ id }}?"
+      },
+      "detail": {
+        "title": "Role"
+      },
+      "roleName": "Role Name",
+      "description": "Description",
+      "status": "Status",
+      "permissions": "Permissions",
+      "userGroups": "User Groups"
+    }
+  }
+}

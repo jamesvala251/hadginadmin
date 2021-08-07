@@ -1,0 +1,31 @@
+{
+  "userManagementFeApp": {
+    "userContacts": {
+      "home": {
+        "title": "User Contacts",
+        "createLabel": "Dodaj User Contacts",
+        "createOrEditLabel": "Dodaj lub edytuj: User Contacts",
+        "notFound": "No User Contacts found"
+      },
+      "created": "Utworzono nowy obiekt typu User Contacts z identyfikatorem {{ param }}",
+      "updated": "Uaktualniono obiekt typu User Contacts z identyfikatorem {{ param }}",
+      "deleted": "Usunięto obiekt typu User Contacts z identyfikatorem {{ param }}",
+      "delete": {
+        "question": "Czy na pewno chcesz usunąć User Contacts {{ id }}?"
+      },
+      "detail": {
+        "title": "User Contacts"
+      },
+      "userId": "User Id",
+      "name": "Name",
+      "relation": "Relation",
+      "phoneNumber": "Phone Number",
+      "email": "Email",
+      "address": "Address",
+      "city": "City",
+      "state": "State",
+      "country": "Country",
+      "zipCode": "Zip Code"
+    }
+  }
+}

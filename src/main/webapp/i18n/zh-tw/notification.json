@@ -1,0 +1,29 @@
+{
+  "userManagementFeApp": {
+    "notification": {
+      "home": {
+        "title": "Notifications",
+        "createLabel": "建立一筆新的 Notification",
+        "createOrEditLabel": "建立或編輯 Notification",
+        "notFound": "No Notifications found"
+      },
+      "created": "新的 Notification 建立成功，識別碼為 {{ param }}",
+      "updated": "識別碼為 {{ param }} 的 Notification 更新成功",
+      "deleted": "識別碼為 {{ param }} 的 Notification 刪除成功",
+      "delete": {
+        "question": "您確定要刪除 Notification {{ id }} 嗎?"
+      },
+      "detail": {
+        "title": "Notification"
+      },
+      "sender": "Sender",
+      "receiver": "Receiver",
+      "title": "Title",
+      "details": "Details",
+      "type": "Type",
+      "status": "Status",
+      "modifiedOn": "Modified On",
+      "modifiedBy": "Modified By"
+    }
+  }
+}

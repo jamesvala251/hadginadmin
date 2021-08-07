@@ -1,0 +1,24 @@
+{
+  "userManagementFeApp": {
+    "state": {
+      "home": {
+        "title": "States",
+        "createLabel": "สร้าง State",
+        "createOrEditLabel": "สร้างหรือแก้ไข State",
+        "notFound": "No States found"
+      },
+      "created": "State ถูกสร้างด้วย {{ param }}",
+      "updated": "State ถูกแก้ไขด้วย {{ param }}",
+      "deleted": "State ถูกลบด้วย {{ param }}",
+      "delete": {
+        "question": "คุณต้องการที่จะลบ State {{ id }}?"
+      },
+      "detail": {
+        "title": "State"
+      },
+      "code": "Code",
+      "name": "Name",
+      "country": "Country"
+    }
+  }
+}

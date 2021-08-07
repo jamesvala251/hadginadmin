@@ -1,0 +1,27 @@
+{
+  "userManagementFeApp": {
+    "disableAccountRequest": {
+      "home": {
+        "title": "Disable Account Requests",
+        "createLabel": "สร้าง Disable Account Request",
+        "createOrEditLabel": "สร้างหรือแก้ไข Disable Account Request",
+        "notFound": "No Disable Account Requests found"
+      },
+      "created": "Disable Account Request ถูกสร้างด้วย {{ param }}",
+      "updated": "Disable Account Request ถูกแก้ไขด้วย {{ param }}",
+      "deleted": "Disable Account Request ถูกลบด้วย {{ param }}",
+      "delete": {
+        "question": "คุณต้องการที่จะลบ Disable Account Request {{ id }}?"
+      },
+      "detail": {
+        "title": "Disable Account Request"
+      },
+      "userId": "User Id",
+      "reason": "Reason",
+      "status": "Status",
+      "createdDate": "Created Date",
+      "updatedDate": "Updated Date",
+      "updatedBy": "Updated By"
+    }
+  }
+}

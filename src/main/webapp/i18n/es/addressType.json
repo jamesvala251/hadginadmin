@@ -1,0 +1,11 @@
+{
+  "userManagementFeApp": {
+    "AddressType": {
+      "null": "",
+      "PRIMARY": "Primary",
+      "SHIPPING": "Shipping",
+      "BILLING": "Billing",
+      "SECONDARY": "Secondary"
+    }
+  }
+}

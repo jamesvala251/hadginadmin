@@ -1,0 +1,48 @@
+<div class="inner-page register-wrp">
+    <div class=" justify-content-center">
+        <div *ngIf="communicationChannel">
+            <div class="page-header">
+            <h2><span jhiTranslate="userManagementFeApp.communicationChannel.detail.title">Communication Channel</span> </h2>
+        </div>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="userManagementFeApp.communicationChannel.channelName">Channel Name</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'userManagementFeApp.Channel.' + communicationChannel.channelName }}">{{ communicationChannel.channelName }}</span>
+                </dd>
+                <dt><span jhiTranslate="userManagementFeApp.communicationChannel.description">Description</span></dt>
+                <dd>
+                    <span>{{ communicationChannel.description }}</span>
+                </dd>
+                <dt><span jhiTranslate="userManagementFeApp.communicationChannel.status">Status</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'userManagementFeApp.Status.' + communicationChannel.status }}">{{ communicationChannel.status }}</span>
+                </dd>
+                <!--
+                <dt><span jhiTranslate="userManagementFeApp.communicationChannel.modifiedOn">Modified On</span></dt>
+                <dd>
+                    <span>{{ communicationChannel.modifiedOn }}</span>
+                </dd>
+                <dt><span jhiTranslate="userManagementFeApp.communicationChannel.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{ communicationChannel.modifiedBy }}</span>
+                </dd>-->
+            </dl>
+            <div class="action-bottom">
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn cur-p btn-secondary">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button" *jhiHasAnyAuthority="['update_communication_channel']"
+                    [routerLink]="['/communication-channel', communicationChannel.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+            </div>
+        </div>
+    </div>
+</div>
